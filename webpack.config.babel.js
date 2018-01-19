@@ -90,6 +90,19 @@ module.exports = (env = {}) => {
   ];
   return {
     entry: {
+      'granary-auth': [
+        './packages/@v8ch/granary-auth/ts/granary-auth.tsx',
+      ],
+      'granary-auth-bootstrap': [
+        './packages/@v8ch/granary-auth/scss/granary-auth-bootstrap.scss',
+      ],
+      'granary-vendor-react': [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'reactstrap',
+        'validator',
+      ],
       'style': [
         './resources/assets/sass/style.scss',
       ],
@@ -100,6 +113,7 @@ module.exports = (env = {}) => {
           test: /\.tsx?$/,
           loader: 'ts-loader',
           include: [
+            path.join(process.cwd(), 'packages/@v8ch/granary-auth/ts'),
             path.join(process.cwd(), 'resources/assets/ts'),
           ],
           exclude: /node_modules/,
