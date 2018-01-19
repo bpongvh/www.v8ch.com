@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "build/js",
+    "sourceMap": true,
+    "target": "es2015"
+  },
+  "include": ["resources/assets/ts/**/*.ts"],
+  "strict": true
+}
