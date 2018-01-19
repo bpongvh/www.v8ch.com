@@ -13,6 +13,9 @@
     "sourceMap": true,
     "target": "es2015"
   },
-  "include": ["resources/assets/ts/**/*.ts"],
+  "include": [
+    "packages/@v8ch/granary-auth/ts/**/*.ts",
+    "resources/assets/ts/**/*.ts"
+  ],
   "strict": true
 }
