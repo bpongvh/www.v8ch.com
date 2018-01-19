@@ -1,21 +1,36 @@
 {
+    "devDependencies": {
+        "@types/react": "^16.0.34",
+        "@types/react-dom": "^16.0.3",
+        "@types/react-redux": "^5.0.14",
+        "@types/react-router-dom": "^4.2.3",
+        "@types/reactstrap": "^5.0.10",
+        "babel-core": "^6.26.0",
+        "babel-register": "^6.26.0",
+        "bootstrap": "^4.0.0",
+        "clean-webpack-plugin": "^0.1.17",
+        "css-loader": "^0.28.9",
+        "extract-text-webpack-plugin": "^3.0.2",
+        "file-loader": "^1.1.6",
+        "hard-source-webpack-plugin": "^0.5.16",
+        "html-loader": "^0.5.5",
+        "node-sass": "^4.7.2",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-redux": "^5.0.6",
+        "react-router-dom": "^4.2.2",
+        "reactstrap": "^4.8.0",
+        "redux": "^3.7.2",
+        "resolve-url-loader": "^2.2.1",
+        "sass-loader": "^6.0.6",
+        "style-loader": "^0.19.1",
+        "tslint": "^5.9.1",
+        "typescript": "^2.6.2",
+        "webpack": "^3.10.0"
+    },
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "axios": "^0.17",
-        "bootstrap-sass": "^3.3.7",
-        "cross-env": "^5.1",
-        "jquery": "^3.2",
-        "laravel-mix": "^1.0",
-        "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "browser-sync": "browser-sync start --config 'browser-sync.config.js'",
+        "dev": "webpack --config=webpack.config.babel.js --progress --watch"
     }
 }
