@@ -1,17 +1,19 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "www.v8ch.com",
+    "description": "All-Natural Web Development",
     "keywords": ["framework", "laravel"],
-    "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "v8ch/combine-auth": "^0.1.0"
+        "v8ch/combine-auth": "^0.1.0",
+        "v8ch/eloquent-model-traits": "^0.1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "doctrine/dbal": "^2.6",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
@@ -62,6 +64,13 @@
             },
             "type": "path",
             "url": "packages/v8ch/combine-auth"
+        },
+        {
+            "options": {
+                "symlink": true
+            },
+            "type": "path",
+            "url": "packages/v8ch/eloquent-model-traits"
         }
     ]
 }
