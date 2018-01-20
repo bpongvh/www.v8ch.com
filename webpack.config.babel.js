@@ -89,6 +89,7 @@ module.exports = (env = {}) => {
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"production"'}}),
   ];
   return {
+    devtool: env.production ? "cheap-module-source-map" : "cheap-module-eval-source-map",
     entry: {
       'granary-auth': [
         './packages/@v8ch/granary-auth/ts/granary-auth.tsx',
@@ -172,9 +173,10 @@ module.exports = (env = {}) => {
     },
     output: {
       chunkFilename: 'js/app-[name].js',
+      devtoolModuleFilenameTemplate: "webpack:///[absolute-resource-path]",
+      filename: 'js/[name].js',
       path: path.join(process.cwd(), 'public'),
       publicPath: '',
-      filename: 'js/[name].js',
     },
     plugins: env.production ? [
       ...commonPlugins,
