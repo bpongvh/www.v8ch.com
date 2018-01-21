@@ -183,7 +183,7 @@ module.exports = (env = {}) => {
       ...productionOnlyPlugins,
     ] : commonPlugins,
     resolve: {
-      extensions: ['.js', '.ts', '.vue'],
+      extensions: ['.js', '.ts', '.tsx', '.vue'],
     },
   };
 };
