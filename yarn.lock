@@ -49,8 +49,9 @@
   dependencies:
     "@types/react" "*"
 
-"@v8ch/model-decorators@file:packages/@v8ch/model-decorators":
-  version "0.0.1"
+"@v8ch/model-decorators@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@v8ch/model-decorators/-/model-decorators-0.0.3.tgz#f72f9e985878b6f663622175307f902e71f9c095"
 
 abbrev@1:
   version "1.1.1"
