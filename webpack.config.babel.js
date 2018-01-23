@@ -92,17 +92,17 @@ module.exports = (env = {}) => {
   return {
     devtool: env.production ? "cheap-module-source-map" : "cheap-module-eval-source-map",
     entry: {
-      'granary-auth': [
-        './packages/@v8ch/granary-auth/ts/granary-auth.tsx',
+      'laravel-auth-spa': [
+        './packages/@v8ch/laravel-auth-spa/ts/app.tsx',
       ],
-      'granary-vendor-react': [
+      'laravel-auth-spa-vendor': [
         'react',
         'react-dom',
         'react-router-dom',
         'reactstrap',
         'validator',
       ],
-      'style': [
+      'laravel-auth-spa-style': [
         './resources/assets/sass/style.scss',
       ],
     },
@@ -112,8 +112,7 @@ module.exports = (env = {}) => {
           test: /\.tsx?$/,
           loader: 'ts-loader',
           include: [
-            path.join(process.cwd(), 'packages/@v8ch/granary-auth/ts'),
-            path.join(process.cwd(), 'resources/assets/ts'),
+            path.join(process.cwd(), 'packages/@v8ch/laravel-auth-spa/ts'),
           ],
           exclude: /node_modules/,
           options: {
