@@ -1,6 +1,7 @@
-/*
+/**
  * @author Robert Pratt <bpong@v8ch.com>
- * @copyright Robert Pratt 2018.
+ * @copyright Robert Pratt 2018
+ * @file Webpack config file for www.v8ch.com repository. Compiles JS and CSS for frontend.
  */
 
 import CleanWebpackPlugin from 'clean-webpack-plugin';
@@ -93,9 +94,6 @@ module.exports = (env = {}) => {
     entry: {
       'granary-auth': [
         './packages/@v8ch/granary-auth/ts/granary-auth.tsx',
-      ],
-      'granary-auth-bootstrap': [
-        './packages/@v8ch/granary-auth/scss/granary-auth-bootstrap.scss',
       ],
       'granary-vendor-react': [
         'react',
