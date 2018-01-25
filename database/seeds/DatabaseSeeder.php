@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use V8CH\Combine\Auth\Database\CombineAuthSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(CombineAuthSeeder::class);
         $this->call(WwwV8chComSeeder::class);
     }
 }
