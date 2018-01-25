@@ -8,7 +8,7 @@
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "v8ch/combine-auth": "^0.1.0",
+        "v8ch/laravel-auth-api": "^0.0.1",
         "v8ch/eloquent-model-traits": "^0.1.0"
     },
     "require-dev": {
@@ -63,7 +63,7 @@
                 "symlink": true
             },
             "type": "path",
-            "url": "packages/v8ch/combine-auth"
+            "url": "packages/v8ch/laravel-auth-api"
         },
         {
             "options": {
