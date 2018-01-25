@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f49f120587efeacb1e02111f1efa2a98",
+    "content-hash": "ced0fcad138f2c55ca5c610e1e3e2424",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -1919,16 +1919,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.7.2",
+            "version": "3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d"
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/bba83ad77bb9deb6d3c352a7361b818e415b221d",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
                 "shasum": ""
             },
             "require": {
@@ -1939,17 +1939,15 @@
                 "rhumsaa/uuid": "self.version"
             },
             "require-dev": {
-                "apigen/apigen": "^4.1",
                 "codeception/aspect-mock": "^1.0 | ~2.0.0",
                 "doctrine/annotations": "~1.2.0",
                 "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
-                "mockery/mockery": "^0.9.4",
+                "mockery/mockery": "^0.9.9",
                 "moontoast/math": "^1.1",
                 "php-mock/php-mock-phpunit": "^0.3|^1.1",
                 "phpunit/phpunit": "^4.7|^5.0",
-                "satooshi/php-coveralls": "^0.6.1",
                 "squizlabs/php_codesniffer": "^2.3"
             },
             "suggest": {
@@ -1997,7 +1995,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-01-13T22:22:03+00:00"
+            "time": "2018-01-20T00:28:24+00:00"
         },
         {
             "name": "spatie/fractalistic",
@@ -3095,46 +3093,18 @@
             "time": "2017-11-27T11:13:29+00:00"
         },
         {
-            "name": "v8ch/combine-auth",
-            "version": "0.1.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/v8ch/combine-auth",
-                "reference": "f0664cb1eedaf45db1ff6f4636131e87767a9258",
-                "shasum": null
-            },
-            "require": {
-                "illuminate/support": "^5.5",
-                "laravel/passport": "^4.0",
-                "php": "^7.0",
-                "spatie/laravel-fractal": "^5.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "V8CH\\Combine\\Auth\\Providers\\AuthServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "V8CH\\Combine\\Auth\\": "src"
-                }
-            },
-            "description": "The Combine Auth package",
-            "transport-options": {
-                "symlink": true
-            }
-        },
-        {
             "name": "v8ch/eloquent-model-traits",
             "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/V8CH/eloquent-model-traits.git",
+                "reference": "b8f8aebe748b497c9b058dabe2b0d8011ccf122a"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/v8ch/eloquent-model-traits",
-                "reference": "7f2fe52d8f901081598aaed9bdcf086f182f4333",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/V8CH/eloquent-model-traits/zipball/b8f8aebe748b497c9b058dabe2b0d8011ccf122a",
+                "reference": "b8f8aebe748b497c9b058dabe2b0d8011ccf122a",
+                "shasum": ""
             },
             "require": {
                 "php": "^7.0"
@@ -3145,7 +3115,43 @@
                     "V8CH\\EloquentModelTraits\\": "src/EloquentModelTraits"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "description": "Utility traits for use in Laravel Eloquent ORM models",
+            "time": "2018-01-24T03:28:50+00:00"
+        },
+        {
+            "name": "v8ch/laravel-auth-api",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "packages/v8ch/laravel-auth-api",
+                "reference": "afaddc1c94ec925484e8a494523a9a900666344b",
+                "shasum": null
+            },
+            "require": {
+                "illuminate/support": "^5.5",
+                "laravel/passport": "^4.0",
+                "php": "^7.0",
+                "spatie/laravel-fractal": "^5.3",
+                "v8ch/eloquent-model-traits": "^0.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "V8CH\\LaravelAuthApi\\Providers\\AuthServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "V8CH\\LaravelAuthApi\\": "src"
+                }
+            },
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "API implemention of Laravel's built-in authentication architecture",
             "transport-options": {
                 "symlink": true
             }
@@ -5380,20 +5386,20 @@
         },
         {
             "name": "symfony/thanks",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/thanks.git",
-                "reference": "0621e9e403cbae531165c98c99f05221bf3b9dba"
+                "reference": "02034a974d29fbc8a59a5e875d3742ca99866a1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/thanks/zipball/0621e9e403cbae531165c98c99f05221bf3b9dba",
-                "reference": "0621e9e403cbae531165c98c99f05221bf3b9dba",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/02034a974d29fbc8a59a5e875d3742ca99866a1c",
+                "reference": "02034a974d29fbc8a59a5e875d3742ca99866a1c",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.1",
+                "composer-plugin-api": "^1.0",
                 "php": "^5.5.9|^7.0.0"
             },
             "type": "composer-plugin",
@@ -5419,7 +5425,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-            "time": "2018-01-10T15:41:47+00:00"
+            "time": "2018-01-25T06:48:53+00:00"
         },
         {
             "name": "theseer/tokenizer",
