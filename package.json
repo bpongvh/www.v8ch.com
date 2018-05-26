@@ -2,7 +2,9 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --mode development --watch"
+    "browser-sync": "browser-sync start --config browser-sync.config.js",
+    "build-dev": "webpack --mode development --progress --watch",
+    "dev": "concurrently \"npm run build-dev\" \"npm run browser-sync\""
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
@@ -16,10 +18,14 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "browser-sync": "^2.24.4",
+    "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-vue": "^4.5.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
