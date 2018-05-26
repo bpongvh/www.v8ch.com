@@ -10,9 +10,7 @@ config :v8ch, V8chWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  check_origin: false
 
 # ## SSL Support
 #
@@ -56,3 +54,7 @@ config :v8ch, V8ch.Repo,
   database: "v8ch_dev",
   hostname: "localhost",
   pool_size: 10
+
+  # Finally import the config/dev.secret.exs
+  # which should be versioned separately.
+  import_config "dev.secret.exs"
