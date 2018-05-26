@@ -11,11 +11,8 @@ config :v8ch,
 
 # Configures the endpoint
 config :v8ch, V8chWeb.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "uwPKnO0GsfJGlMJR5IJeRddtP8TDju6QgP34YnhlnUjfwMyh0H2sDcLqsPoU1Wdc",
   render_errors: [view: V8chWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: V8ch.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: V8ch.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
