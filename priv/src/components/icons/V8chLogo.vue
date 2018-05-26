@@ -9,7 +9,7 @@
 </template>
 
 <style lang="scss">
-  .v8ch-logo {
-    fill: $color__v8ch-green;
-  }
+.v8ch-logo {
+  fill: $color__v8ch-green;
+}
 </style>
