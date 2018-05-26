@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb-base", "plugin:vue/essential"],
+  "extends": ["airbnb-base", "plugin:prettier/recommended", "plugin:vue/essential"],
   "env": {
     "browser": true,
     "node": true,
