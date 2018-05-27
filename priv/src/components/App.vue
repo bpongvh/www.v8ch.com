@@ -1,16 +1,13 @@
 <template>
-    <div>
-        <V8chLogo />
-        <p>Hello, world!</p>
-    </div>
+  <home />
 </template>
 
-<script lang="babel">
-  import V8chLogo from './icons/V8chLogo.vue';
+<script type="text/babel">
+import Home from './Home.vue';
 
-  export default {
-    components: { V8chLogo },
-  }
+export default {
+  components: { Home },
+};
 </script>
 
 <style lang="scss">
