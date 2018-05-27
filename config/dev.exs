@@ -10,9 +10,7 @@ config :v8ch, V8chWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  check_origin: false
 
 # ## SSL Support
 #
@@ -30,17 +28,6 @@ config :v8ch, V8chWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-# Watch static and templates for browser reloading.
-config :v8ch, V8chWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
-      ~r{priv/gettext/.*(po)$},
-      ~r{lib/v8ch_web/views/.*(ex)$},
-      ~r{lib/v8ch_web/templates/.*(eex)$}
-    ]
-  ]
-
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -51,8 +38,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :v8ch, V8ch.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "v8ch_dev",
-  hostname: "localhost",
   pool_size: 10
+
+  # Finally import the config/dev.secret.exs
+  # which should be versioned separately.
+  import_config "dev.secret.exs"

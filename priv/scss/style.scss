@@ -1,0 +1,93 @@
+@import '~normalize.css/normalize';
+@import 'placeholders';
+@import 'typography';
+@import 'variables';
+@import 'bootstrap/bootstrap';
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.featured-link {
+  &.featured-link--light {
+    a, p {
+      color: $color__v8ch-green;
+    }
+  }
+
+  a {
+    @extend %one-em-medium-lower;
+  }
+
+  h5 {
+    @extend %one-em-medium-lower;
+    margin: 0;
+  }
+
+  p {
+    @extend %one-em-thin-lower;
+    margin: 0;
+  }
+}
+
+.featured-link--margin-bottom {
+  margin: 0 0 1em;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: $label-margin-bottom;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.main--light-background {
+  background-color: $color__v8ch-green;
+}
+
+.main--dark-background {
+  background-color: $color__v8ch-dark-green;
+}
+
+.main--hero {
+  height: 100vw;
+}
+
+.main--framed {
+  padding: 2em 1em;
+}
+
+.main__container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &.main__container--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.main__container--bottom {
+    align-items: flex-end;
+  }
+}
+
+.main__container--space-between {
+  justify-content: space-between;
+}
+
+.main__container--margin-bottom {
+  margin: 0 0 2em 0;
+}
+
+.v8ch-green {
+  color: $color__v8ch-green;
+}
+
+.v8ch-dark-green {
+  color: $color__v8ch-dark-green;
+}
