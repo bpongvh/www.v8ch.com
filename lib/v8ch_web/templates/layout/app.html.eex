@@ -11,7 +11,8 @@
   <title>V8CH</title>
   <!--
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    -->
+  -->
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,500" rel="stylesheet">
 </head>
 
 <body>
