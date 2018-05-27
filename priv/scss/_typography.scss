@@ -1,0 +1,53 @@
+.dual-header,
+.header,
+.split-header {
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+  }
+
+  h3 {
+    @extend %two-em-medium-upper;
+  }
+
+  h4 {
+    @extend %one-em-medium-lower;
+  }
+
+  h5 {
+    @extend %one-em-thin-lower;
+  }
+}
+
+.dual-header--light {
+  color: $color__v8ch-green;
+}
+
+.dual-header--dark {
+  color: $color__v8ch-dark-green;
+}
+
+.header--light {
+  color: $color__v8ch-green;
+}
+
+.header--dark {
+  color: $color__v8ch-dark-green;
+}
+
+.header {
+  h3 {
+    margin: 0 0 1em 0;
+  }
+}
+
+.split-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.split-header--light {
+  color: $color__v8ch-green;
+}
