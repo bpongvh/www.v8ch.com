@@ -8,8 +8,9 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :v8ch, V8chWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "localhost"],
   debug_errors: true,
-  code_reloader: true,
+  code_reloader: false,
   check_origin: false
 
 # ## SSL Support
