@@ -60,6 +60,11 @@ config :logger, level: :info
 #     config :v8ch, V8chWeb.Endpoint, server: true
 #
 
+# Configure your database
+config :v8ch, V8ch.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  pool_size: 10
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
