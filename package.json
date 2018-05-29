@@ -4,6 +4,7 @@
   "scripts": {
     "browser-sync": "browser-sync start --config browser-sync.config.js",
     "build-dev": "webpack --mode development --progress --watch",
+    "build-prod": "webpack --mode development --progress",
     "dev": "concurrently \"npm run build-dev\" \"npm run browser-sync\""
   },
   "dependencies": {
