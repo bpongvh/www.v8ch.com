@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="main main--light-background main--framed">
     <div class="main__container main__container--margin-bottom">
       <div class="dual-header dual-header--dark">
@@ -38,3 +38,9 @@
     </div>
   </div>
 </template>
+
+<script type="text/babel">
+</script>
+
+<style lang="scss">
+</style>

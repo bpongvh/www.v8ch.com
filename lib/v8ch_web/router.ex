@@ -11,16 +11,20 @@ defmodule V8chWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :protect_from_forgery
   end
 
   scope "/", V8chWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", V8chWeb do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", V8chWeb do
+    pipe_through :api
+
+    resources "/contact", ContactController, only: [:create]
+  end
 end

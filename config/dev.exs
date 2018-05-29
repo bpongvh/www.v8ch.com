@@ -10,7 +10,7 @@ config :v8ch, V8chWeb.Endpoint,
   http: [port: 4000],
   url: [host: "localhost"],
   debug_errors: true,
-  code_reloader: false,
+  code_reloader: true,
   check_origin: false
 
 # ## SSL Support

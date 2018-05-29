@@ -5,6 +5,7 @@
     aria-labelledby="title"
     viewBox="0 0 2000 2000"
     xmlns="http://www.w3.org/2000/svg"
+    @click="$emit('click')"
   >
     <title id="title">GitHub Logo</title>
     <g>
