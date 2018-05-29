@@ -8,20 +8,15 @@
   <meta name="description" content="">
   <meta name="author" content="Robert Pratt">
 
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+
   <title>V8CH</title>
-  <!--
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  -->
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,600" rel="stylesheet">
 </head>
 
 <body>
-
   <%= render @view_module, @view_template, assigns %>
-
-    <!-- Site Scripts -->
-    <script src="/js/v8ch.js"></script>
-    <script src="/js/vendors~v8ch.js"></script>
 </body>
 
 </html>
