@@ -34,6 +34,29 @@ body {
   margin: 0 0 1em;
 }
 
+.feedback {
+  display: flex;
+  width: 100%;
+
+  &.feedback-dark {
+    color: $color__v8ch-dark-green;
+  }
+
+  & .feedback-content {
+    padding: 0 0 0 1em;
+  }
+
+  h5 {
+    @extend %one-em-medium-lower;
+    margin: 0;
+  }
+
+  p {
+    @extend %one-em-thin-lower;
+    margin: 0;
+  }
+}
+
 label {
   display: inline-block;
   margin-bottom: $label-margin-bottom;
@@ -62,9 +85,7 @@ label {
 }
 
 .main__container {
-  display: flex;
-  height: 100%;
-  width: 100%;
+  @extend %flex-container-base;
 
   &.main__container--center {
     align-items: center;
@@ -76,12 +97,24 @@ label {
   }
 }
 
+.main__form-container {
+  @extend %flex-container-base;
+
+  & form {
+    width: 100%;
+  }
+}
+
 .main__container--space-between {
   justify-content: space-between;
 }
 
 .main__container--margin-bottom {
   margin: 0 0 2em 0;
+}
+
+.main__container--vcenter {
+  align-content: center;
 }
 
 .v8ch-green {
