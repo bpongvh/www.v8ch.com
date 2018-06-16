@@ -5,7 +5,10 @@
         <h3>Contact</h3>
       </div>
     </div>
-    <div class="main_form-container main__container--margin-bottom">
+    <div
+      v-if="!isSubmitted"
+      class="main__form-container main__container--margin-bottom"
+    >
       <form
         novalidate
         @submit.prevent="onSubmit"
@@ -50,6 +53,21 @@
         </button>
       </form>
     </div>
+    <div
+      v-else
+      class="main__container main__container--margin-bottom main__container--vcenter"
+    >
+      <div class="feedback feedback-dark">
+        <v8ch-logo
+          color="dark"
+          size="x-small"
+        />
+        <div class="feedback-content">
+          <h5>Thank you!</h5>
+          <p>I will respond as soon as I can.</p>
+        </div>
+      </div>
+    </div>
     <div class="main__container main__container--space-between">
       <div class="social-icons">
         <github-logo
@@ -69,6 +87,7 @@
 <script type="text/babel">
 import GithubLogo from '../icons/GithubLogo.vue';
 import TwitterLogo from '../icons/TwitterLogo.vue';
+import V8chLogo from '../icons/V8chLogo.vue';
 import V8chLogotype from '../icons/V8chLogotype.vue';
 import ApiService from '../../services/api-service';
 
@@ -76,6 +95,7 @@ export default {
   components: {
     GithubLogo,
     TwitterLogo,
+    V8chLogo,
     V8chLogotype,
   },
 
@@ -86,6 +106,7 @@ export default {
   data() {
     return {
       email: '',
+      isSubmitted: false,
       message: '',
     };
   },
@@ -98,7 +119,8 @@ export default {
     onSubmit() {
       const post = { email: this.email, message: this.message };
       console.log(`[ContactMain] onSubmit() post: ${JSON.stringify(post)}`);
-      ApiService.post('/api/v1/contact', post);
+      ApiService.post('/api/v1/contact', post)
+        .then(() => { this.isSubmitted = true; });
     },
     viewAtGithub() {
       window.location.href = 'https://github.com/V8CH';

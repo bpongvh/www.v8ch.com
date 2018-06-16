@@ -1,17 +1,39 @@
+%flex-container-base {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
 %one-em-medium-lower {
   font-size: 1em;
   font-weight: 600;
   text-transform: lowercase;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5em;
+  }
 }
 
 %one-em-thin-lower {
   font-size: 1em;
   font-weight: 300;
   text-transform: lowercase;
+
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5em;
+  }
 }
 
 %two-em-medium-upper {
   font-size: 2em;
   font-weight: 600;
   text-transform: uppercase;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.5em;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 4em;
+  }
 }
