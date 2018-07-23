@@ -6,43 +6,39 @@
       </div>
     </div>
     <div class="main__2col">
-      <div class="featured-link featured-link--light featured-link--margin-bottom">
+      <div
+        :key="index"
+        class="featured-link featured-link--light featured-link--margin-bottom"
+        v-for="(project, index) in projects"
+      >
         <h5>
-          <a href="https://github.com/V8CH">Code Repositories</a>
+          <a :href="project.data.href" v-text=" project.title.rendered" />
         </h5>
-        <p>V8CH at GitHub</p>
-      </div>
-      <div class="featured-link featured-link--light featured-link--margin-bottom">
-        <h5>
-          <a href="https://www.departmentware.com">Departmentware</a>
-        </h5>
-        <p>SAAS platform for managing documentation of field training for new police officers</p>
-      </div>
-      <div class="featured-link featured-link--light featured-link--margin-bottom">
-        <h5>
-          <a href="https://combine.team/">Combine</a>
-        </h5>
-        <p>Team organization architecture built with Laravel, React and VueJS (demo on request)</p>
-      </div>
-      <div class="featured-link featured-link--light featured-link--margin-bottom">
-        <h5>
-          <a href="http://www.jeromegoldschmidt.com">jeromegoldschmidt.com</a>
-        </h5>
-        <p>Custom WordPress theme</p>
-      </div>
-      <div class="featured-link featured-link--light">
-        <h5>
-          <a href="http://www.bakerbrospr.com">bakerbrospr.com</a>
-        </h5>
-        <p>Custom WordPress theme</p>
+        <p v-text="project.data.description" />
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/babel">
+  export default {
+    data() {
+      return { projects: [] }
+    },
+    async mounted() {
+      const baseUrl = 'http://cms.local/wp-json/wp/v2/featured-links';
+      const params = new URLSearchParams();
+      params.set('filter[featured_link_tag]', 'front-page--projects');
+      params.set('filter[order]', 'ASC');
+      params.set('filter[orderby]', 'menu_order');
+      const url = `${baseUrl}?${params.toString()}`;
+      this.projects = await fetch(url, { method: 'GET' })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Response not ok');
+        })
+    }
+  };
 </script>
-
-<style lang="scss">
-</style>
-
