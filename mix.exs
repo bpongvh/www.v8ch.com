@@ -34,6 +34,8 @@ defmodule V8ch.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
+      {:distillery, "~> 1.5.3"},
+      {:edeliver, "~> 1.5.3"},
       {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
