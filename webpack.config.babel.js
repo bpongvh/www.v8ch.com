@@ -1,3 +1,4 @@
+import DotenvPlugin from 'dotenv-webpack';
 import path from 'path';
 import VueLoaderPlugin from 'vue-loader/lib/plugin';
 
@@ -28,7 +29,10 @@ module.exports = (env = {}) => {
     ],
   };
 
-  const developmentPlugins = [new VueLoaderPlugin()];
+  const developmentPlugins = [
+    new DotenvPlugin(),
+    new VueLoaderPlugin(),
+  ];
 
   // ----------------------
   // Config object
