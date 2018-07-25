@@ -4,7 +4,7 @@ defmodule V8ch.Mixfile do
   def project do
     [
       app: :v8ch,
-      version: "0.0.1",
+      version: "0.0.2",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -34,6 +34,8 @@ defmodule V8ch.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
+      {:distillery, "~> 1.5.3"},
+      {:edeliver, "~> 1.5.3"},
       {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
