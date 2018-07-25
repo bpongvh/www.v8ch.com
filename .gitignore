@@ -1,10 +1,10 @@
 _build
-.deliver/releases
 config/*.secret.exs
 deps
 node_modules
 priv/static/css
 priv/static/js
 priv/static/*
+.env
 v8ch.pid
 v8ch.service
