@@ -1,5 +1,4 @@
 _build
-.deliver/releases
 config/*.secret.exs
 deps
 node_modules
