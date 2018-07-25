@@ -26,7 +26,7 @@
       return { projects: [] }
     },
     async mounted() {
-      const baseUrl = 'http://cms.local/wp-json/wp/v2/featured-links';
+      const baseUrl = `${process.env.CMS_API_HOST}/wp-json/wp/v2/featured-links`;
       const params = new URLSearchParams();
       params.set('filter[featured_link_tag]', 'front-page--projects');
       params.set('filter[order]', 'ASC');
