@@ -16,7 +16,6 @@ config :v8ch, V8chWeb.Endpoint,
 
 config :v8ch, V8ch.Mailer,
   adapter: Bamboo.MailgunAdapter,
-  api_key: "key-243e98360197fd9106f1302bc684551c",
   domain: "v8ch.com"
 
 # Configures Elixir's Logger
