@@ -14,6 +14,10 @@ config :v8ch, V8chWeb.Endpoint,
   render_errors: [view: V8chWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: V8ch.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :v8ch, V8ch.Mailer,
+  adapter: Bamboo.MailgunAdapter,
+  domain: "v8ch.com"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
