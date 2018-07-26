@@ -33,6 +33,7 @@ defmodule V8ch.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bamboo, "~> 1.0"},
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5.3"},
       {:edeliver, "~> 1.5.3"},
