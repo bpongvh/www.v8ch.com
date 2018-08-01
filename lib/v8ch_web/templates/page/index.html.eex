@@ -1,7 +1,10 @@
 <!-- V8CH App -->
 
-<div id="v8ch" />
+<div id="v8ch"></div>
 
 <!-- Site Scripts -->
-<script src="/js/v8ch.js"></script>
-<script src="/js/vendors~v8ch.js"></script>
+<script src="/js/v8ch-app.js"></script>
+<script src="/js/v8ch-app~v8ch-style.js"></script>
+<script src="/js/v8ch-style.js"></script>
+<script src="/js/vendors~v8ch-app.js"></script>
+<script src="/js/vendors~v8ch-app~v8ch-style.js"></script>

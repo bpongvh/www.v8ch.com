@@ -5,9 +5,6 @@ const ApiService = axios.create({
   headers: {
     common: {
       Accept: 'application/json',
-      'X-CSRF-TOKEN': document.head
-        .querySelector('meta[name="csrf-token"]')
-        .getAttribute('content'),
       'X-Requested-With': 'XMLHttpRequest',
     },
   },
