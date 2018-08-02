@@ -6,6 +6,8 @@ defmodule V8ch.Contacts do
   import Ecto.Query, warn: false
   alias V8ch.Repo
 
+  @behaviour V8ch.Behaviours.Contacts
+
   alias V8ch.Contacts.Contact
 
   @doc """
