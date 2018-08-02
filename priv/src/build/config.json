@@ -9,7 +9,6 @@
       "priv/static/css",
       "priv/static/fonts",
       "priv/static/images",
-      "priv/static/index.html",
       "priv/static/js"
     ],
     "dist": "priv/static",

@@ -45,12 +45,11 @@ export default (env = {}) => {
     template: config.paths.htmlTemplate
   };
   const miniCssExtractOptions = {
-    filename: "css/[name].[chunkhash].css",
+    filename: env.production ? "css/[name].[chunkhash].css" : "css/[name].css",
     chunkFilename: "css/[id].css"
   };
 
   const commonPlugins = [
-    new CleanPlugin(cleanPaths, cleanOptions),
     new DotenvPlugin(),
     new HtmlPlugin(htmlOptions),
     new VueLoaderPlugin()
@@ -59,6 +58,7 @@ export default (env = {}) => {
   const developmentPlugins = [...commonPlugins];
   const productionPlugins = [
     ...developmentPlugins,
+    new CleanPlugin(cleanPaths, cleanOptions),
     new MiniCssExtractPlugin(miniCssExtractOptions)
   ];
 
@@ -152,7 +152,7 @@ export default (env = {}) => {
     },
     output: {
       devtoolModuleFilenameTemplate: "webpack:///[absolute-resource-path]",
-      filename: "js/[name].[hash].js",
+      filename: env.production ? "js/[name].[hash].js" : "js/[name].js",
       path: path.join(process.cwd(), config.paths.output),
       publicPath: ""
     },
