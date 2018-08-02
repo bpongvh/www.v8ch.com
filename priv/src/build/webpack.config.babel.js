@@ -70,12 +70,7 @@ export default (env = {}) => {
     context: process.cwd(),
     devServer: {
       contentBase: config.paths.dist,
-      proxy: [
-        {
-          context: config.proxyContext,
-          target: config.proxyTarget
-        }
-      ]
+      proxy: config.proxy && config.proxy.length > 0 ? config.proxy : undefined
     },
     devtool: env.production ? "source-map" : "cheap-module-eval-source-map",
     entry: config.entry,
@@ -157,7 +152,7 @@ export default (env = {}) => {
     },
     output: {
       devtoolModuleFilenameTemplate: "webpack:///[absolute-resource-path]",
-      filename: "js/[name].[chunkhash].js",
+      filename: "js/[name].[hash].js",
       path: path.join(process.cwd(), config.paths.output),
       publicPath: ""
     },

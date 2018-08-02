@@ -16,7 +16,5 @@
         "htmlTemplate": "priv/src/index.html",
         "output": "priv/static",
         "sassResources": "priv/src/scss/_variables.scss"
-    },
-    "proxyContext": ["/"],
-    "proxyTarget": "http://localhost:4000"
+    }
 }
