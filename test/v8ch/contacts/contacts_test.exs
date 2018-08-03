@@ -37,7 +37,7 @@ defmodule V8ch.ContactsTest do
     end
 
     test "create_contact/1 with valid data creates a contact" do
-      assert {:ok, %Contact{} = contact} = Contacts.create_contact(@valid_attrs)
+      assert {:ok, %Contact{} = _contact} = Contacts.create_contact(@valid_attrs)
     end
 
     test "create_contact/1 with invalid data returns error changeset" do
