@@ -6,9 +6,9 @@ defmodule V8ch.ContentTypesTest do
   describe "featured_links" do
     alias V8ch.ContentTypes.FeaturedLink
 
-    @valid_attrs %{description: "some description", guid: "7488a646-e31f-11e4-aace-600308960662", href: "some href", title: "some title"}
-    @update_attrs %{description: "some updated description", guid: "7488a646-e31f-11e4-aace-600308960668", href: "some updated href", title: "some updated title"}
-    @invalid_attrs %{description: nil, guid: nil, href: nil, title: nil}
+    @valid_attrs %{description: "some description", href: "some href", title: "some title"}
+    @update_attrs %{description: "some updated description", href: "some updated href", title: "some updated title"}
+    @invalid_attrs %{description: nil, href: nil, title: nil}
 
     def featured_link_fixture(attrs \\ %{}) do
       {:ok, featured_link} =
@@ -32,7 +32,6 @@ defmodule V8ch.ContentTypesTest do
     test "create_featured_link/1 with valid data creates a featured_link" do
       assert {:ok, %FeaturedLink{} = featured_link} = ContentTypes.create_featured_link(@valid_attrs)
       assert featured_link.description == "some description"
-      assert featured_link.guid == "7488a646-e31f-11e4-aace-600308960662"
       assert featured_link.href == "some href"
       assert featured_link.title == "some title"
     end
@@ -46,7 +45,6 @@ defmodule V8ch.ContentTypesTest do
       assert {:ok, featured_link} = ContentTypes.update_featured_link(featured_link, @update_attrs)
       assert %FeaturedLink{} = featured_link
       assert featured_link.description == "some updated description"
-      assert featured_link.guid == "7488a646-e31f-11e4-aace-600308960668"
       assert featured_link.href == "some updated href"
       assert featured_link.title == "some updated title"
     end
