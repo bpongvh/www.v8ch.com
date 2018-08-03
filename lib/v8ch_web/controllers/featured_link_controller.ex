@@ -5,7 +5,13 @@ defmodule V8chWeb.FeaturedLinkController do
 
   action_fallback(V8chWeb.FallbackController)
 
-  def create(conn, params) do
+  def create(conn, %{"description" => description, "href" => href, "title" => title}) do
+    params = %{
+      description: description,
+      href: href,
+      guid: Ecto.UUID.generate(),
+      title: title,
+    }
     with {:ok, featured_link} <- @featured_links_module.create_featured_link(params) do
       conn
       |> render(FeaturedLinkView, "featured_link.json", %{featured_link: featured_link})
