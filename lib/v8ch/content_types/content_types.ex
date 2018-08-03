@@ -51,14 +51,9 @@ defmodule V8ch.ContentTypes do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_featured_link(%{"description" => description, "href" => href, "title" => title}) do
+  def create_featured_link(attrs) do
     %FeaturedLink{}
-    |> FeaturedLink.changeset(%{
-      description: description,
-      guid: Ecto.UUID.generate(),
-      href: href,
-      title: title
-    })
+    |> FeaturedLink.changeset(attrs)
     |> Repo.insert()
   end
 
