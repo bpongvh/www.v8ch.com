@@ -6,7 +6,6 @@ defmodule V8ch.Contacts.Contact do
 
   schema "contacts" do
     field :email, :string
-    field :guid, Ecto.UUID
     field :message, :string
 
     timestamps()
@@ -15,7 +14,7 @@ defmodule V8ch.Contacts.Contact do
   @doc false
   def changeset(%Contact{} = contact, attrs) do
     contact
-    |> cast(attrs, [:email, :guid, :message])
-    |> validate_required([:email, :guid, :message])
+    |> cast(attrs, [:email, :message])
+    |> validate_required([:email, :message])
   end
 end

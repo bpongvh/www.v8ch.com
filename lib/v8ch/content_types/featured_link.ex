@@ -6,7 +6,6 @@ defmodule V8ch.ContentTypes.FeaturedLink do
 
   schema "featured_links" do
     field :description, :string
-    field :guid, Ecto.UUID
     field :href, :string
     field :title, :string
 
@@ -16,7 +15,7 @@ defmodule V8ch.ContentTypes.FeaturedLink do
   @doc false
   def changeset(%FeaturedLink{} = featured_link, attrs) do
     featured_link
-    |> cast(attrs, [:description, :href, :guid, :title])
-    |> validate_required([:description, :href, :guid, :title])
+    |> cast(attrs, [:description, :href, :title])
+    |> validate_required([:description, :href, :title])
   end
 end

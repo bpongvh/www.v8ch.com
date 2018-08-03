@@ -5,7 +5,6 @@ defmodule V8ch.Repo.Migrations.CreateFeaturedLinks do
     create table(:featured_links) do
       add :description, :string
       add :href, :string
-      add :guid, :uuid
       add :title, :string
 
       timestamps()
