@@ -3,7 +3,7 @@ defmodule V8ch.ContactsTest do
 
   alias V8ch.Contacts
 
-  describe "contacts" do
+  describe "CONTACTS CONTEXT MODULE" do
     alias V8ch.Contacts.Contact
 
     @valid_attrs %{

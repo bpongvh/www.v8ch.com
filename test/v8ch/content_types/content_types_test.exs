@@ -3,7 +3,7 @@ defmodule V8ch.ContentTypesTest do
 
   alias V8ch.ContentTypes
 
-  describe "featured_links" do
+  describe "FEATURED LINKS CONTEXT MODULE" do
     alias V8ch.ContentTypes.FeaturedLink
 
     @valid_attrs %{description: "some description", href: "some href", title: "some title"}
