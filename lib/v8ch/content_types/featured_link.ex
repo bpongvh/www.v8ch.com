@@ -3,11 +3,10 @@ defmodule V8ch.ContentTypes.FeaturedLink do
   import Ecto.Changeset
   alias V8ch.ContentTypes.FeaturedLink
 
-
   schema "featured_links" do
-    field :description, :string
-    field :href, :string
-    field :title, :string
+    field(:description, :string)
+    field(:href, :string)
+    field(:title, :string)
 
     timestamps()
   end
@@ -15,7 +14,7 @@ defmodule V8ch.ContentTypes.FeaturedLink do
   @doc false
   def changeset(%FeaturedLink{} = featured_link, attrs) do
     featured_link
-    |> cast(attrs, [:description, :href, :title])
+    |> cast(attrs, [:description, :href, :id, :title])
     |> validate_required([:description, :href, :title])
   end
 end

@@ -2,7 +2,6 @@ defmodule V8chWeb.GraphQlMiddleware.HandleChangesetErrors do
     @behaviour Absinthe.Middleware
   
     def call(res, _) do
-      # to be completed
       with %{errors: [%Ecto.Changeset{} = changeset]} <- res do
         %{res |
           value: %{errors: transform_errors(changeset)},
@@ -26,3 +25,4 @@ defmodule V8chWeb.GraphQlMiddleware.HandleChangesetErrors do
       end)
     end
   end
+  
