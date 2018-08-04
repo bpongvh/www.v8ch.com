@@ -18,19 +18,35 @@ defmodule V8chWeb.GraphQlSchema do
 
   import_types(FeaturedLink)
 
+  # ----------------------
+  # Import queries
+  # ----------------------
+
   query do
     import_fields(:featured_links_queries)
   end
 
+  # ----------------------
+  # Import mutations
+  # ----------------------
+
   mutation do
     import_fields(:featured_links_mutations)
   end
+
+  # ----------------------
+  # Global objects
+  # ----------------------
 
   @desc "An error result when persisting input"
   object :input_error do
     field(:key, non_null(:string))
     field(:message, non_null(:string))
   end
+
+  # ----------------------
+  # Custom types
+  # ----------------------
 
   # scalar :json do
   #   parse fn input ->
