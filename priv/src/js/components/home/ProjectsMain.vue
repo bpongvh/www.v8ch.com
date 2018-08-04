@@ -12,33 +12,14 @@
         v-for="(project, index) in projects"
       >
         <h5>
-          <a :href="project.data.href" v-text=" project.title.rendered" />
+          <a :href="project.href" v-text=" project.title" />
         </h5>
-        <p v-text="project.data.description" />
+        <p v-text="project.description" />
       </div>
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-  export default {
-    data() {
-      return { projects: [] }
-    },
-    async mounted() {
-      const baseUrl = `${process.env.CMS_API_HOST}/wp-json/wp/v2/featured-links`;
-      const params = new URLSearchParams();
-      params.set('filter[featured_link_tag]', 'front-page--projects');
-      params.set('filter[order]', 'ASC');
-      params.set('filter[orderby]', 'menu_order');
-      const url = `${baseUrl}?${params.toString()}`;
-      this.projects = await fetch(url, { method: 'GET' })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Response not ok');
-        })
-    }
-  };
+  export default { props: { projects: Array } };
 </script>
