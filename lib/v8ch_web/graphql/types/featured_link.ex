@@ -15,10 +15,18 @@ defmodule V8chWeb.GraphQlTypes.FeaturedLink do
     field :errors, list_of(:input_error)
   end
 
-  @desc "Featured link input object"
-  input_object :featured_link_input do
+  @desc "Featured link input object for create requests"
+  input_object :featured_link_create_input do
     field :description, non_null(:string)
     field :href, non_null(:string)
+    field :title, non_null(:string)
+  end
+
+  @desc "Featured link input object for update requests"
+  input_object :featured_link_update_input do
+    field :description, non_null(:string)
+    field :href, non_null(:string)
+    field :id, non_null(:integer)
     field :title, non_null(:string)
   end
 end
