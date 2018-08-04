@@ -1,4 +1,4 @@
-defmodule V8chWeb.GraphQlFields.FeaturedLinks do
+defmodule V8chWeb.GraphQlFields.FeaturedLinksQueries do
   use Absinthe.Schema.Notation
 
   @featured_links_module Application.get_env(:v8ch, :featured_links_module)
