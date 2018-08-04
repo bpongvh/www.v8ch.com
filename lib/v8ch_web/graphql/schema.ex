@@ -1,33 +1,29 @@
 defmodule V8chWeb.GraphQlSchema do
   use Absinthe.Schema
 
-  alias V8chWeb.GraphQlMiddleware.CheckAuthentication, as: CheckAuthenticationMiddleware
-  alias V8chWeb.GraphQlMiddleware.HandleChangesetErrors, as: HandleChangesetErrorsMiddleware
-  alias V8chWeb.GraphQlResolvers.FeaturedLinks, as: FeaturedLinksResolver
+  alias V8chWeb.GraphQlFields.FeaturedLinksMutations
+  alias V8chWeb.GraphQlFields.FeaturedLinksQueries
+  alias V8chWeb.GraphQlTypes.FeaturedLink
 
   # ----------------------
   # Import fields
   # ----------------------
 
-  import_types(V8chWeb.GraphQlFields.FeaturedLinks)
+  import_types(FeaturedLinksMutations)
+  import_types(FeaturedLinksQueries)
 
   # ----------------------
   # Import Types
   # ----------------------
 
-  import_types(V8chWeb.GraphQlTypes.FeaturedLink)
+  import_types(FeaturedLink)
 
   query do
     import_fields(:featured_links_queries)
   end
 
   mutation do
-    field :create_featured_link, :featured_link_mutation_result do
-      arg(:data, non_null(:featured_link_input))
-      middleware CheckAuthenticationMiddleware
-      resolve(&FeaturedLinksResolver.create_featured_link/3)
-      middleware HandleChangesetErrorsMiddleware
-    end
+    import_fields(:featured_links_mutations)
   end
 
   @desc "An error result when persisting input"
