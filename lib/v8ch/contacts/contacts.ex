@@ -6,6 +6,8 @@ defmodule V8ch.Contacts do
   import Ecto.Query, warn: false
   alias V8ch.Repo
 
+  @behaviour V8ch.Behaviours.Contacts
+
   alias V8ch.Contacts.Contact
 
   @doc """
@@ -49,13 +51,9 @@ defmodule V8ch.Contacts do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_contact(%{email: email, message: message}) do
+  def create_contact(attrs) do
     %Contact{}
-    |> Contact.changeset(%{
-      email: email,
-      guid: Ecto.UUID.generate(),
-      message: message
-    })
+    |> Contact.changeset(attrs)
     |> Repo.insert()
   end
 

@@ -1,6 +1,9 @@
 defmodule V8chWeb.Router do
   use V8chWeb, :router
 
+  alias V8chWeb.Plugs.GraphQlContext
+  alias V8chWeb.GraphQlSchema, as: V8chGraphQlSchema
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -11,14 +14,21 @@ defmodule V8chWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug :fetch_session
-    plug :protect_from_forgery
+    # plug :fetch_session
+    # plug :protect_from_forgery
+  end
+
+  pipeline :graphql do
+    plug(:accepts, ["json"])
+    plug(GraphQlContext)
   end
 
   scope "/", V8chWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/login", AuthenticationController, :login
+    get "/logout", AuthenticationController, :logout
   end
 
   # Other scopes may use custom stacks.
@@ -26,5 +36,17 @@ defmodule V8chWeb.Router do
     pipe_through :api
 
     resources "/contact", ContactController, only: [:create]
+    resources "/featured-link", FeaturedLinkController, only: [:create]
   end
+
+  # ----------------------
+  # GraphQL
+  # ----------------------
+
+    scope "/" do
+      pipe_through([:graphql])
+
+      forward("/graphql/v1", Absinthe.Plug, schema: V8chGraphQlSchema)
+      forward("/graphiql", Absinthe.Plug.GraphiQL, schema: V8chGraphQlSchema)
+    end
 end

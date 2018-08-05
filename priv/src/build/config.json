@@ -1,0 +1,25 @@
+{
+  "entry": {
+    "v8ch-app": ["./priv/src/js/v8ch.js"],
+    "v8ch-style": ["./priv/src/scss/style.scss"]
+  },
+  "htmlTemplate": "./priv/src/index.html",
+  "paths": {
+    "clean": [
+      "priv/static/css",
+      "priv/static/fonts",
+      "priv/static/images",
+      "priv/static/js"
+    ],
+    "dist": "priv/static",
+    "htmlTemplate": "priv/src/index.html",
+    "output": "priv/static",
+    "sassResources": "priv/src/scss/_variables.scss"
+  },
+  "proxy": [
+    {
+      "context": ["/api/v1", "/graphql/v1", "/graphiql", "/login", "/logout"],
+      "target": "http://localhost:4000"
+    }
+  ]
+}

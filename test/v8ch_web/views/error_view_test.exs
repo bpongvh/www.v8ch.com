@@ -1,6 +1,8 @@
 defmodule V8chWeb.ErrorViewTest do
   use V8chWeb.ConnCase, async: true
 
+  @moduletag :error_view
+
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View
 

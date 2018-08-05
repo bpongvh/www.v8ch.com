@@ -1,9 +1,11 @@
 defmodule V8ch.ContactsTest do
   use V8ch.DataCase
 
+  @moduletag :contacts_modules
+
   alias V8ch.Contacts
 
-  describe "contacts" do
+  describe "CONTACTS CONTEXT MODULE" do
     alias V8ch.Contacts.Contact
 
     @valid_attrs %{
@@ -37,7 +39,7 @@ defmodule V8ch.ContactsTest do
     end
 
     test "create_contact/1 with valid data creates a contact" do
-      assert {:ok, %Contact{} = contact} = Contacts.create_contact(@valid_attrs)
+      assert {:ok, %Contact{} = _contact} = Contacts.create_contact(@valid_attrs)
     end
 
     test "create_contact/1 with invalid data returns error changeset" do

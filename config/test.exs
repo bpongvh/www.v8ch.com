@@ -1,5 +1,9 @@
 use Mix.Config
 
+# General application config
+config :v8ch,
+  env: "test"
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :v8ch, V8chWeb.Endpoint,
