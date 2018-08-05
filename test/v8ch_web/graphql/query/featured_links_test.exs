@@ -1,5 +1,7 @@
-defmodule V8chWeb.GraphQl.Mutation.FeaturedLinksTest do
+defmodule V8chWeb.GraphQl.Query.FeaturedLinksTest do
   use V8chWeb.ConnCase, async: true
+
+  @moduletag :featured_links_query
 
   alias V8ch.ContentTypes
 
@@ -34,7 +36,7 @@ defmodule V8chWeb.GraphQl.Mutation.FeaturedLinksTest do
       {:ok, [featured_link: featured_link_fixture(@valid_attrs)]}
     end
 
-    test "deleting a featured_link removes persisted", %{featured_link: featured_link} do
+    test "listing featured_links shows all", %{featured_link: featured_link} do
       conn = build_conn()
 
       conn = post(conn, "/graphql/v1", query: @query)
