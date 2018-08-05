@@ -1,6 +1,8 @@
 defmodule V8ch.ContactsTest do
   use V8ch.DataCase
 
+  @moduletag :contacts_modules
+
   alias V8ch.Contacts
 
   describe "CONTACTS CONTEXT MODULE" do

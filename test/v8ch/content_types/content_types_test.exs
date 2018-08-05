@@ -1,6 +1,8 @@
 defmodule V8ch.ContentTypesTest do
   use V8ch.DataCase
 
+  @moduletag :content_types_modules
+
   alias V8ch.ContentTypes
 
   describe "FEATURED LINKS CONTEXT MODULE" do

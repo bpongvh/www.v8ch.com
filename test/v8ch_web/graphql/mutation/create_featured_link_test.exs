@@ -1,6 +1,8 @@
 defmodule V8chWeb.GraphQl.Query.CreateFeaturedLinkTest do
   use V8chWeb.ConnCase, async: true
 
+  @moduletag :create_featured_link_mutation
+
   describe "CREATE FEATURED LINKS" do
     @query """
     mutation ($featuredLink: FeaturedLinkCreateInput!) {

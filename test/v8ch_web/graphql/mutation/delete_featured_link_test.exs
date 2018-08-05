@@ -1,6 +1,8 @@
 defmodule V8chWeb.GraphQl.Mutation.DeleteFeaturedLinkTest do
   use V8chWeb.ConnCase, async: true
 
+  @moduletag :delete_featured_link_mutation
+
   alias V8ch.ContentTypes
 
   describe "DELETE FEATURED LINKS: " do
