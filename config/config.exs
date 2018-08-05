@@ -10,6 +10,7 @@ config :v8ch,
   contacts_module: V8ch.Contacts,
   contexts_module: V8ch.Contexts,
   featured_links_module: V8ch.ContentTypes,
+  posts_module: V8ch.ContentTypes,
   ecto_repos: [V8ch.Repo]
 
 # Configures the endpoint
