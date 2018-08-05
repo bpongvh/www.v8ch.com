@@ -1,9 +1,12 @@
 defmodule V8chWeb.GraphQlSchema do
   use Absinthe.Schema
 
+  alias V8chWeb.GraphQlTypes.FeaturedLink
   alias V8chWeb.GraphQlFields.FeaturedLinksMutations
   alias V8chWeb.GraphQlFields.FeaturedLinksQueries
-  alias V8chWeb.GraphQlTypes.FeaturedLink
+  alias V8chWeb.GraphQlTypes.Post
+  alias V8chWeb.GraphQlFields.PostsMutations
+  alias V8chWeb.GraphQlFields.PostsQueries
 
   # ----------------------
   # Import fields
@@ -11,12 +14,15 @@ defmodule V8chWeb.GraphQlSchema do
 
   import_types(FeaturedLinksMutations)
   import_types(FeaturedLinksQueries)
+  import_types(PostsMutations)
+  import_types(PostsQueries)
 
   # ----------------------
   # Import Types
   # ----------------------
 
   import_types(FeaturedLink)
+  import_types(Post)
 
   # ----------------------
   # Import queries
@@ -24,6 +30,7 @@ defmodule V8chWeb.GraphQlSchema do
 
   query do
     import_fields(:featured_links_queries)
+    import_fields(:posts_queries)
   end
 
   # ----------------------
@@ -32,6 +39,7 @@ defmodule V8chWeb.GraphQlSchema do
 
   mutation do
     import_fields(:featured_links_mutations)
+    import_fields(:posts_mutations)
   end
 
   # ----------------------

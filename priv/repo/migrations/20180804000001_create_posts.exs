@@ -3,7 +3,7 @@ defmodule V8ch.Repo.Migrations.CreatePosts do
 
   def change do
     create table(:posts) do
-      add :content, :string
+      add :content, :text
       add :title, :string
 
       timestamps()
