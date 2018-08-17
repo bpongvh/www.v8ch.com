@@ -1,28 +1,22 @@
 <template>
-  <div class="main main--light-background main--framed">
-    <div class="main__container">
-      <div class="header header--dark">
-        <h3>Contact</h3>
-      </div>
-    </div>
+  <section class="bg-medium">
+    <header class="block-header">
+      <h2>Contact</h2>
+    </header>
     <div
       v-if="!isSubmitted"
-      class="main__form-container main__container--margin-bottom"
+      class="block-content block-content--padded"
     >
       <form
         novalidate
         @submit.prevent="onSubmit"
       >
         <div class="form-group">
-          <label
-            class="v8ch-dark-green"
-            for="email"
-          >Email address</label>
+          <label for="email">Email address</label>
           <input
             id="email"
             v-model="email"
             class="form-control"
-            placeholder="Email address"
             type="email"
           >
           <div class="invalid-feedback">
@@ -30,16 +24,12 @@
           </div>
         </div>
         <div class="form-group">
-          <label
-            class="v8ch-dark-green"
-            for="message"
-          >Message</label>
+          <label for="message">Message</label>
           <textarea
             id="message"
             v-model="message"
             class="form-control"
             rows="5"
-            placeholder="Message"
           />
           <div class="invalid-feedback">
             Message is required.
@@ -55,7 +45,7 @@
     </div>
     <div
       v-else
-      class="main__container main__container--margin-bottom main__container--vcenter"
+      class="block-content block-content--padded block-content--vcenter"
     >
       <div class="feedback feedback-dark">
         <v8ch-logo
@@ -68,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="main__container main__container--space-between">
+    <footer class="site-links">
       <div class="social-icons">
         <github-logo
           size="small"
@@ -80,8 +70,8 @@
         />
       </div>
       <v8ch-logotype size="small" />
-    </div>
-  </div>
+    </footer>
+  </section>
 </template>
 
 <script type="text/babel">
@@ -118,7 +108,7 @@ export default {
   methods: {
     onSubmit() {
       const post = { email: this.email, message: this.message };
-      console.log(`[ContactMain] onSubmit() post: ${JSON.stringify(post)}`);
+      console.log(`[Contactblock-content] onSubmit() post: ${JSON.stringify(post)}`);
       ApiService.post('/api/v1/contact', post)
         .then(() => { this.isSubmitted = true; });
     },

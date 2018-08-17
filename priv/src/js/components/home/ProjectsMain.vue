@@ -1,14 +1,12 @@
 <template>
-  <div class="main main--dark-background main--framed">
-    <div class="main__container">
-      <div class="header header--light">
-        <h3>Projects</h3>
-      </div>
-    </div>
-    <div class="main__2col">
+  <section class="bg-dark">
+    <header class="block-header">
+      <h2>Projects</h2>
+    </header>
+    <div class="block-content block-content__2col block-content--padded">
       <div
         :key="index"
-        class="featured-link featured-link--light featured-link--margin-bottom"
+        class="featured-link text-light"
         v-for="(project, index) in projects"
       >
         <h5>
@@ -17,7 +15,7 @@
         <p v-text="project.description" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script type="text/babel">

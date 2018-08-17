@@ -1,0 +1,13 @@
+.inset {
+  @include media-breakpoint-up(md) {
+    padding: 0 12.5%;
+  }
+}
+
+.bg-medium {
+  background-color: $color__v8ch-green;
+}
+
+.v8ch-dark-green {
+  color: $color__v8ch-dark-green;
+}

@@ -1,42 +1,32 @@
 <template>
-  <div class="main main--light-background main--framed">
-    <div class="main__container main__container--margin-bottom">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>Elixir</h3>
-        <h5>Phoenix Framework</h5>
+  <section class="bg-medium">
+    <header class="block-header">
+      <h2>Skills</h2>
+    </header>
+    <div class="block-content block-content--padded">
+      <div class="block-content__container">
+        <dl class="inset text-dark">
+          <dd>Elixir</dd>
+          <dt>Absinthe | Phoenix Framework</dt>
+          
+          <dd>JavaScript</dd>
+          <dt>AngularJS/Angular | React | VueJS</dt>
+          
+          <dd>NodeJS</dd>
+          <dt>Express | FeathersJS</dt>
+          
+          <dd>NoSQL</dd>
+          <dt>CouchDB | Firebase</dt>
+          
+          <dd>PHP</dd>
+          <dt>Laravel | WordPress</dt>
+          
+          <dd>SQL</dd>
+          <dt>MySQL | PostgreSQL</dt>
+        </dl>
       </div>
     </div>
-    <div class="main__container main__container--margin-bottom">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>JavaScript</h3>
-        <h5>AngularJS/Angular | React | VueJS</h5>
-      </div>
-    </div>
-    <div class="main__container main__container--margin-bottom">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>NodeJS</h3>
-        <h5>Express | FeathersJS</h5>
-      </div>
-    </div>
-    <div class="main__container main__container--margin-bottom">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>NoSQL</h3>
-        <h5>CouchDB | Firebase</h5>
-      </div>
-    </div>
-    <div class="main__container main__container--margin-bottom">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>PHP</h3>
-        <h5>Laravel | WordPress</h5>
-      </div>
-    </div>
-    <div class="main__container">
-      <div class="dual-header dual-header--dark dual-header--inset">
-        <h3>SQL</h3>
-        <h5>MySQL | PostgreSQL</h5>
-      </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script type="text/babel">

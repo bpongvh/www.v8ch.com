@@ -54,7 +54,7 @@ export default {
         case 'dark':
           return 'v8ch-dark-green';
         default:
-          return 'v8ch-green';
+          return 'v8ch-light-green';
       }
     },
     height() {
@@ -86,8 +86,8 @@ export default {
 </script>
 
 <style lang="scss">
-.v8ch-green {
-  fill: $color__v8ch-green;
+.v8ch-light-green {
+  fill: $color__v8ch-light-green;
 }
 .v8ch-dark-green {
   fill: $color__v8ch-dark-green;
