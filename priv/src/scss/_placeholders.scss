@@ -4,30 +4,45 @@
   width: 100%;
 }
 
-%one-em-medium-lower {
+%one-em-bold {
+  font-family: $font__display;
   font-size: 1em;
-  font-weight: 600;
-  text-transform: lowercase;
+  font-weight: 700;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25em;
+  }
 
   @include media-breakpoint-up(xl) {
     font-size: 1.5em;
   }
 }
 
-%one-em-thin-lower {
+%one-em-light {
   font-size: 1em;
   font-weight: 300;
-  text-transform: lowercase;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25em;
+  }
 
   @include media-breakpoint-up(xl) {
     font-size: 1.5em;
   }
 }
 
-%two-em-medium-upper {
+%text--light {
+  color: $color__v8ch-light-green;
+}
+
+%text--dark {
+  color: $color__v8ch-xdark-green;
+}
+
+%two-em-bold {
+  font-family: $font__display;
   font-size: 2em;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 700;
 
   @include media-breakpoint-up(md) {
     font-size: 2.5em;

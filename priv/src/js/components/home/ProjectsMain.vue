@@ -1,23 +1,20 @@
 <template>
-  <div class="main main--dark-background main--framed">
-    <div class="main__container">
-      <div class="header header--light">
-        <h3>Projects</h3>
-      </div>
+  <section class="bg-dark">
+    <header class="content-block-header">
+      <h2>Projects</h2>
+    </header>
+    <div class="content-block content-block--inset text-light">
+      <ul class="featured-link-list">
+        <li
+          :key="index"
+          v-for="(project, index) in projects"
+        >
+          <a class="featured-link-list__title" :href="project.href" v-text=" project.title" />
+          <span class="featured-link-list__description" v-text="project.description" />
+        </li>
+      </ul>
     </div>
-    <div class="main__2col">
-      <div
-        :key="index"
-        class="featured-link featured-link--light featured-link--margin-bottom"
-        v-for="(project, index) in projects"
-      >
-        <h5>
-          <a :href="project.href" v-text=" project.title" />
-        </h5>
-        <p v-text="project.description" />
-      </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script type="text/babel">

@@ -1,30 +1,28 @@
 <template>
-  <div class="main main--dark-background main--hero">
-    <div class="main__container">
-      <div class="dual-header dual-header--light">
-        <h3>Robert Pratt</h3>
-        <h5>Full-stack developer</h5>
-      </div>
-    </div>
-    <div class="main__container main__container--center">
+  <section class="bg-dark hero">
+    <header class="site-header">
+      <ul class="keyword-list text-light text-right">
+        <li>
+          <span class="keyword-list__term">Robert Pratt</span>
+          <span class="keyword-list__definition">Full-Stack Developer</span>
+        </li>
+      </ul>
+    </header>
+    <div class="content-block content-block--center">
       <v8ch-logo :size="logoSize" />
     </div>
-    <div class="main__container main__container--bottom">
-      <div class="split-header split-header--light">
-        <h4>Favor creation</h4>
-        <h5>Over consumption</h5>
-      </div>
-    </div>
-  </div>
+    <footer class="tagline">
+      <p>Favor creation</p>
+      <p>over consumption</p>
+    </footer>
+  </section>
 </template>
 
 <script type="text/babel">
 import V8chLogo from '../icons/V8chLogo.vue';
 
 export default {
-  components: {
-    V8chLogo,
-  },
+  components: { V8chLogo },
 
   // ----------------------
   // Data
@@ -48,6 +46,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-</style>

@@ -9,11 +9,15 @@
   width: calc(100% - 1.5rem);
   padding: $input-padding-y $input-padding-x;
   font-size: $font-size-base;
+  font-family: $font__fixed;
   line-height: $input-line-height;
   color: $input-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  border-bottom: $input-border-width solid $input-border-color;
+  border-left: none;
+  border-right: none;
+  border-top: none;
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @if $enable-rounded {

@@ -10,7 +10,7 @@
 
 // stylelint-disable
 // $white:    #fff !default;
-$white:    $color__v8ch-green !default;
+$white:    $color__v8ch-xlight-green !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -71,8 +71,10 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+// $light:         $gray-100 !default;
+$light:         $color__v8ch-light-green !default;
+// $dark:          $gray-800 !default;
+$dark:          $color__v8ch-xdark-green !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -94,15 +96,18 @@ $theme-color-interval:      8% !default;
 $yiq-contrasted-threshold:  165 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-text-dark:             $gray-900 !default;
-$yiq-text-light:            $white !default;
+// $yiq-text-dark:             $gray-900 !default;
+$yiq-text-dark:             $color__v8ch-xdark-green !default;
+// $yiq-text-light:            $white !default;
+$yiq-text-light:            $color__v8ch-light-green !default;
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret:              true !default;
-$enable-rounded:            true !default;
+// $enable-rounded:            true !default;
+$enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
@@ -412,14 +417,16 @@ $input-disabled-bg:                     $gray-200 !default;
 $input-color:                           $gray-700 !default;
 // $input-border-color:                    $gray-400 !default;
 $input-border-color:                    $color__v8ch-dark-green !default;
-$input-border-width:                    $input-btn-border-width !default;
+// $input-border-width:                    $input-btn-border-width !default;
+$input-border-width:                    2px !default;
 $input-box-shadow:                      inset 0 1px 1px rgba($black, .075) !default;
 
 $input-border-radius:                   $border-radius !default;
 $input-border-radius-lg:                $border-radius-lg !default;
 $input-border-radius-sm:                $border-radius-sm !default;
 
-$input-focus-bg:                        $input-bg !default;
+// $input-focus-bg:                        $input-bg !default;
+$input-focus-bg:                        $color__v8ch-light-green !default;
 // $input-focus-border-color:              lighten($component-active-bg, 25%) !default;
 $input-focus-border-color:              rgba($component-active-bg, 25%) !default;
 $input-focus-color:                     $input-color !default;

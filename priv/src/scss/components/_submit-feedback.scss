@@ -1,0 +1,23 @@
+.feedback {
+    display: flex;
+    width: 100%;
+  
+    &.feedback-dark {
+      color: $color__v8ch-dark-green;
+    }
+  
+    & .feedback-content {
+      padding: 0 0 0 1em;
+    }
+  
+    h5 {
+      @extend %one-em-bold;
+      margin: 0;
+    }
+  
+    p {
+      @extend %one-em-light;
+      margin: 0;
+    }
+  }
+  

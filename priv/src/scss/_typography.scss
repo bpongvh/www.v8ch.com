@@ -1,53 +1,20 @@
-.dual-header,
-.header,
-.split-header {
-  h3,
-  h4,
-  h5 {
-    margin: 0;
-  }
-
-  h3 {
-    @extend %two-em-medium-upper;
-  }
-
-  h4 {
-    @extend %one-em-medium-lower;
-  }
-
-  h5 {
-    @extend %one-em-thin-lower;
-  }
+h2 {
+  font-family: $font__display;
 }
 
-.dual-header--light {
-  color: $color__v8ch-green;
+h3 {
+  @extend %two-em-bold;
 }
 
-.dual-header--dark {
-  color: $color__v8ch-dark-green;
+h4 {
+  @extend %one-em-bold;
 }
 
-.header--light {
-  color: $color__v8ch-green;
+h5 {
+  @extend %one-em-light;
 }
 
-.header--dark {
-  color: $color__v8ch-dark-green;
-}
-
-.header {
-  h3 {
-    margin: 0 0 1em 0;
-  }
-}
-
-.split-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.split-header--light {
-  color: $color__v8ch-green;
+label {
+  color: $color__v8ch-xdark-green;
+  font-family: $font__display;
 }
