@@ -1,63 +1,20 @@
-.block-header {
-  h2 {
-    background-color: $color__v8ch-light-green;
-    font-size: 1rem;
-    margin: 0;
-    padding: 1em;
-  }
-}
-
-dd {
-  font-family: $font__display;
-  font-size: 2em;
-}
-
-.featured-link {
-  &.text-light {
-    a {
-      color: $color__v8ch-light-green;
-      font-family: $font__display;
-    }
-  }
-
-  a {
-    @extend %one-em-medium-lower;
-  }
-
-  h5 {
-    @extend %one-em-medium-lower;
-  }
-
-  p {
-    @extend %one-em-thin-lower;
-  }
-}
-
 h2 {
   font-family: $font__display;
 }
 
 h3 {
-  @extend %two-em-medium-upper;
+  @extend %two-em-bold;
 }
 
 h4 {
-  @extend %one-em-medium-lower;
+  @extend %one-em-bold;
 }
 
 h5 {
-  @extend %one-em-thin-lower;
+  @extend %one-em-light;
 }
 
 label {
   color: $color__v8ch-xdark-green;
   font-family: $font__display;
-}
-
-.tagline {
-  color: $color__v8ch-light-green;
-
-  & :first-child {
-    font-family: $font__display;
-  }
 }

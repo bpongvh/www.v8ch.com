@@ -1,11 +1,12 @@
-.inset {
-  @include media-breakpoint-up(md) {
-    padding: 0 12.5%;
-  }
-}
-
 .bg-medium {
   background-color: $color__v8ch-green;
+}
+
+// Augment Bootstrap style
+.text-light {
+  & a {
+    color: $color__v8ch-light-green;
+  }
 }
 
 .v8ch-dark-green {

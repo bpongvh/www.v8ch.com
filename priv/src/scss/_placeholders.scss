@@ -4,18 +4,27 @@
   width: 100%;
 }
 
-%one-em-medium-lower {
+%one-em-bold {
+  font-family: $font__display;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 700;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25em;
+  }
 
   @include media-breakpoint-up(xl) {
     font-size: 1.5em;
   }
 }
 
-%one-em-thin-lower {
+%one-em-light {
   font-size: 1em;
   font-weight: 300;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25em;
+  }
 
   @include media-breakpoint-up(xl) {
     font-size: 1.5em;
@@ -30,7 +39,7 @@
   color: $color__v8ch-xdark-green;
 }
 
-%two-em-medium-upper {
+%two-em-bold {
   font-family: $font__display;
   font-size: 2em;
   font-weight: 700;

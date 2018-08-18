@@ -1,11 +1,11 @@
 <template>
   <section class="bg-medium">
-    <header class="block-header">
+    <header class="content-block-header">
       <h2>Contact</h2>
     </header>
     <div
       v-if="!isSubmitted"
-      class="block-content block-content--padded"
+      class="content-block content-block--form"
     >
       <form
         novalidate
@@ -45,7 +45,7 @@
     </div>
     <div
       v-else
-      class="block-content block-content--padded block-content--vcenter"
+      class="content-block content-block--padded content-block--vcenter"
     >
       <div class="feedback feedback-dark">
         <v8ch-logo
@@ -108,7 +108,6 @@ export default {
   methods: {
     onSubmit() {
       const post = { email: this.email, message: this.message };
-      console.log(`[Contactblock-content] onSubmit() post: ${JSON.stringify(post)}`);
       ApiService.post('/api/v1/contact', post)
         .then(() => { this.isSubmitted = true; });
     },

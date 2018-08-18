@@ -4,154 +4,26 @@
 @import "typography";
 @import "utilities";
 @import "variables";
+@import "components/content-block";
+@import "components/footer-header";
+@import "components/hero";
+@import "components/list";
+@import "components/submit-feedback";
 
 body {
   font-family: "Work Sans", sans-serif;
   margin: 0;
 }
 
-.block-content {
-  display: flex;
-  flex-direction: column;
-
-  &.block-content--center {
-    align-items: center;
-    justify-content: center;
-  }
-
-  &.block-content--padded {
-    padding: 0 1em 2em;
-  
-    @include media-breakpoint-up(md) {
-      padding: 4em 2em;
-    }
-  
-    @include media-breakpoint-up(xl) {
-      padding: 6em 2em;
-    }
-  }
-}
-
-.block-content--light-background {
-  background-color: $color__v8ch-green;
-}
-
-.block-content--dark-background {
-  background-color: $color__v8ch-dark-green;
-}
-
-.block-content__2col {
-  @include media-breakpoint-up(md) {
-    columns: 2;
-    column-gap: 2em;
-    padding: 0 12.5%;
-  }
-
-  & .featured-link {
-    break-inside: avoid;
-  }
-}
-
-.block-content--vcenter {
-  align-content: center;
-}
-
-.block-header {
-  display: flex;
-  justify-content: flex-end;
-
-  & h2 {
-    flex: 0 0 auto;
-  }
-}
-
-dl {
-  margin: 0;
-  width: 100%;
-
-  dd {
-    margin-left: 0;
-
-    &:not(:first-of-type),
-    &:not(:last-of-type) {
-      margin-top: 0.75em;
-    }
-  }
-}
-
-.featured-link {
-  &:not(:first-of-type),
-  &:not(:last-of-type) {
-    margin-top: 1em;
-  }
-
-  h5 { margin: 0; }
-
-  p { margin: 0; }
-}
-
-.feedback {
-  display: flex;
-  width: 100%;
-
-  &.feedback-dark {
-    color: $color__v8ch-dark-green;
-  }
-
-  & .feedback-content {
-    padding: 0 0 0 1em;
-  }
-
-  h5 {
-    @extend %one-em-medium-lower;
-    margin: 0;
-  }
-
-  p {
-    @extend %one-em-thin-lower;
-    margin: 0;
-  }
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1em 2em;
-}
-
-header {
-  &.site-header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1em 1em 0;
-  }
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  height: 100vw;
-
-  @media (orientation: landscape) {
-    height: calc(100vh - 2em);
-  }
-
-  @media (min-width: 768px) and (orientation: landscape) {
-    height: calc(100vh - 4em);
-  }
-
-  & .block-content {
-    flex: 1 0 auto;
-  }
-}
-
 label {
   display: inline-block;
   margin-bottom: $label-margin-bottom;
-}
 
-p {
-  footer.tagline & {
-    margin: 0;
+  @include media-breakpoint-up(md) {
+    font-size: 1.25em;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5em;
   }
 }

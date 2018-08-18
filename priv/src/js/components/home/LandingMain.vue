@@ -1,12 +1,14 @@
 <template>
   <section class="bg-dark hero">
     <header class="site-header">
-      <dl class="text-light text-right">
-        <dd>Robert Pratt</dd>
-        <dt>Full-Stack Developer</dt>
-      </dl>
+      <ul class="keyword-list text-light text-right">
+        <li>
+          <span class="keyword-list__term">Robert Pratt</span>
+          <span class="keyword-list__definition">Full-Stack Developer</span>
+        </li>
+      </ul>
     </header>
-    <div class="block-content block-content--center">
+    <div class="content-block content-block--center">
       <v8ch-logo :size="logoSize" />
     </div>
     <footer class="tagline">

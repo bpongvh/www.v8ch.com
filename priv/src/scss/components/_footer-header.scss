@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em 2em;
+
+  &.tagline {
+    color: $color__v8ch-light-green;
+
+    & :first-child {
+      font-family: $font__display;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.5rem;
+    }
+    
+    @include media-breakpoint-up(lg) {
+      font-size: 2rem;
+    }
+  
+    p {
+      margin: 0;
+    }
+  }
+}
+
+header {
+  &.site-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 1em 0;
+  }
+}

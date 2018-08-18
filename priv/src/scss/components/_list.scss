@@ -1,0 +1,81 @@
+.featured-link-list {
+  & a {
+    font-family: $font__display;
+    font-weight: 700;
+  }
+}
+
+li {
+  .featured-link-list &,
+  .keyword-list & {
+    list-style: none;
+  }
+
+  .featured-link-list & {
+    @include media-breakpoint-up(md) {
+      break-inside: avoid;
+      font-size: 1.25em;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.5em;
+    }
+  }
+
+  & .featured-link-list__title {
+    display: block;
+  }
+
+  & .featured-link-list__description {
+    display: block;
+  }
+
+  .keyword-list & {
+    @include media-breakpoint-up(lg) {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  & .keyword-list__term {
+    display: block;
+    font-family: $font__display;
+    font-size: 2em;
+  }
+  & .keyword-list__description {
+    display: block;
+  }
+}
+
+.featured-link-list li:not(:last-of-type) {
+  margin: 0 0 1em;
+}
+
+.keyword-list li:not(:last-of-type) {
+  margin: 0 0 1.5em;
+}
+
+ul {
+  &.featured-link-list {
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      columns: 2;
+      column-gap: 2em;
+    }
+  }
+
+  &.keyword-list {
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.5em;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2em;
+    }
+  }
+}
