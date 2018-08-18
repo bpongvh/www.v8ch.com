@@ -9,10 +9,10 @@
 
 <script type="text/babel">
 import gql from 'graphql-tag'
-import ContactMain from './ContactMain.vue';
-import LandingMain from './LandingMain.vue';
-import ProjectsMain from './ProjectsMain.vue';
-import SkillsMain from './SkillsMain.vue';
+import ContactMain from './ContactMain';
+import LandingMain from './LandingMain';
+import ProjectsMain from './ProjectsMain';
+import SkillsMain from './SkillsMain';
 
 export default {
   apollo: { featuredLinks: gql`{featuredLinks {description href title}}` },

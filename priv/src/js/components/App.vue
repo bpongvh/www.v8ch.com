@@ -9,6 +9,3 @@ export default {
   components: { Home },
 };
 </script>
-
-<style lang="scss">
-</style>
