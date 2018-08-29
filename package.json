@@ -30,6 +30,7 @@
     "babel-plugin-transform-vue-jsx": "^4.0.1",
     "bootstrap": "^4.1.1",
     "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
     "cssnano": "^4.0.5",
     "dotenv-webpack": "^1.5.7",
