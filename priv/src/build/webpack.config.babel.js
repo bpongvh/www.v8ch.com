@@ -1,4 +1,5 @@
 import CleanPlugin from "clean-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 import DotenvPlugin from "dotenv-webpack";
 import HtmlPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -37,6 +38,22 @@ export default (env = {}) => {
     root: process.cwd(),
     verbose: true
   };
+  const copyPatterns = [
+    {
+      context: "priv/packages/@v8ch/trivia-challenge/public/css",
+      from: "*.+(css|map)",
+      to: "css"
+    },
+    {
+      from: "priv/packages/@v8ch/trivia-challenge/public/index.html",
+      to: "trivia-challenge.html"
+    },
+    {
+      context: "priv/packages/@v8ch/trivia-challenge/public/js",
+      from: "*.js",
+      to: "js"
+    }
+  ];
   const htmlOptions = {
     minify: {
       collapseWhitespace: true,
@@ -50,6 +67,7 @@ export default (env = {}) => {
   };
 
   const commonPlugins = [
+    new CopyPlugin(copyPatterns),
     new DotenvPlugin(),
     new HtmlPlugin(htmlOptions),
     new VueLoaderPlugin()
