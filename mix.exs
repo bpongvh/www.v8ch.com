@@ -6,9 +6,9 @@ defmodule V8ch.Mixfile do
       app: :v8ch,
       version: "0.1.0",
       elixir: "~> 1.6",
-      elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-      start_permanent: Mix.env == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
     ]
@@ -20,13 +20,13 @@ defmodule V8ch.Mixfile do
   def application do
     [
       mod: {V8ch.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:ex_machina, :logger, :runtime_tools]
     ]
   end
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
   #
@@ -39,6 +39,8 @@ defmodule V8ch.Mixfile do
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5.3"},
       {:edeliver, "~> 1.5.3"},
+      {:ex_machina, "~> 2.2"},
+      {:faker_elixir_octopus, "~> 1.0.2"},
       {:gettext, "~> 0.11"},
       {:jose, "~> 1.8.4"},
       {:phoenix, "~> 1.3.0"},
