@@ -29,6 +29,7 @@ defmodule V8chWeb.Router do
     get "/", PageController, :index
     get "/login", AuthenticationController, :login
     get "/logout", AuthenticationController, :logout
+    get "/trivia-challenge", PageController, :trivia_challenge
   end
 
   # Other scopes may use custom stacks.

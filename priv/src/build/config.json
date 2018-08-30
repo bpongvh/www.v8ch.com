@@ -18,7 +18,7 @@
   },
   "proxy": [
     {
-      "context": ["/api/v1", "/graphql/v1", "/graphiql", "/login", "/logout"],
+      "context": ["/api/v1", "/graphql/v1", "/graphiql", "/login", "/logout", "/trivia-challenge"],
       "target": "http://localhost:4000"
     }
   ]
