@@ -3,6 +3,7 @@ _build
 config/*.secret.exs
 deps
 node_modules
+priv/packages
 priv/static/css
 priv/static/js
 priv/static/*
