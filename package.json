@@ -94,7 +94,8 @@
   "scripts": {
     "build:dev": "webpack --config priv/src/build/webpack.config.babel.js --mode development --progress",
     "build:prod": "webpack --config priv/src/build/webpack.config.babel.js --env.production --mode production --progress",
-    "start": "webpack-dev-server --config priv/src/build/webpack.config.babel.js --hot --mode development --progress"
+    "start": "webpack-dev-server --config priv/src/build/webpack.config.babel.js --hot --mode development --progress",
+    "build:watch": "webpack --config priv/src/build/webpack.config.babel.js --mode development --progress --watch"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss"
