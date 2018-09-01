@@ -9,7 +9,8 @@
       "priv/static/css",
       "priv/static/fonts",
       "priv/static/images",
-      "priv/static/js"
+      "priv/static/js",
+      "priv/static/*.html"
     ],
     "dist": "priv/static",
     "htmlTemplate": "priv/src/index.html",
