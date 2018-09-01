@@ -30,6 +30,11 @@ defmodule V8chWeb.Router do
     get "/login", AuthenticationController, :login
     get "/logout", AuthenticationController, :logout
     get "/trivia-challenge", PageController, :trivia_challenge
+    get "/trivia-challenge/about", PageController, :trivia_challenge
+    get "/trivia-challenge/answer/:sequence", PageController, :trivia_challenge
+    get "/trivia-challenge/no-results", PageController, :trivia_challenge
+    get "/trivia-challenge/quiz/:id", PageController, :trivia_challenge
+    get "/trivia-challenge/results", PageController, :trivia_challenge
   end
 
   # Other scopes may use custom stacks.
@@ -37,7 +42,6 @@ defmodule V8chWeb.Router do
     pipe_through :api
 
     resources "/contact", ContactController, only: [:create]
-    resources "/featured-link", FeaturedLinkController, only: [:create]
   end
 
   # ----------------------
