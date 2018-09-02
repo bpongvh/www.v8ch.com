@@ -4,7 +4,7 @@ defmodule V8chWeb.GraphQlTypes.Post do
   @desc "Post query object"
   object :post do
     field(:content, :string)
-    field(:inserted_at, :string)
+    field(:inserted_at, :iso8601)
     field(:id, :id)
     field(:title, :string)
   end
