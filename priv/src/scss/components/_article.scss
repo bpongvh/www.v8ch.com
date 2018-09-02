@@ -1,0 +1,30 @@
+article {
+    &.blog-post {
+        background-color: $color__v8ch-xlight-green;
+        margin: 3em 0 0;
+    }
+
+    p { line-height: 1.25; }
+}
+
+.article-header {
+    h2 {
+        font-size: 2em;
+        padding: 2em 0.5em 1em;
+    }
+}
+
+.article-header__kicker {
+    display: flex;
+    justify-content: flex-end;
+
+    & h5 {
+        background-color: $color__v8ch-green;
+        font-family: $font__display;
+        padding: 1em;
+    }
+}
+
+.blog-post__content {
+    padding: 0 1em 2em;
+}

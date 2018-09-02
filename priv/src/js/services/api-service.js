@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
 const ApiService = axios.create({
-  baseURL: '/',
+  baseURL: "/",
   headers: {
     common: {
-      Accept: 'application/json',
-      'X-Requested-With': 'XMLHttpRequest',
-    },
+      Accept: "application/json",
+      "X-Requested-With": "XMLHttpRequest"
+    }
   },
-  withCredentials: true,
+  withCredentials: true
 });
 
 export default ApiService;

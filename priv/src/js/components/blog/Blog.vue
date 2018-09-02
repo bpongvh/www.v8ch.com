@@ -9,45 +9,43 @@
         </li>
       </ul>
     </header>
-    <main class="container">
-      <article class="blog-post">
-        <header>
+    <main class="blog container">
+      <article class="blog-post" :key="index" v-for="(post, index) in posts">
+        <header class="article-header">
+          <div class="article-header__kicker">
+            <h5>{{post.published}}</h5>
+          </div>
           <h2>
-            Donec nec justo eget felis facilisis fermentum
+            {{post.title}}
           </h2>
         </header>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-          Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-        </p>
-        <p>
-          Donec nec justo eget felis facilisis fermentum. Aliquam porttitor
-          mauris sit amet orci. Aenean dignissim pellentesque felis.
-        </p>
-        <p>
-          Morbi in sem quis dui placerat ornare. Pellentesque odio nisi,
-          euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
-        </p>
-        <p>
-          Praesent dapibus, neque id cursus faucibus, tortor neque egestas
-          auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam
-          dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
-        </p>
-        <p>
-          Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec
-          consectetuer ligula vulputate sem tristique cursus. Nam nulla quam,
-          gravida non, commodo a, sodales sit amet, nisi.
-        </p>
+        <section class="blog-post__content" v-html="post.content" />
       </article>
     </main>
   </div>
 </template>
 
 <script type="text/babel">
+import gql from "graphql-tag";
+import moment from "moment";
 import Topbar from "../Topbar";
+import postResponseTransformer from "../../transformers/response-data/post";
+
 export default {
+  apollo: {
+    postsResponse: {
+      query: gql`{posts { content id insertedAt title }}`,
+      update(response) {
+        return response.posts;
+      }
+    }
+  },
   components: { Topbar },
+  computed: {
+    posts() {
+      return this.postsResponse ? this.postsResponse.map(post => postResponseTransformer(post)) : null;
+    }
+  },
   methods: {
     toggleOffcanvas() {      
       AppContext.$emit("toggle-offcanvas");
