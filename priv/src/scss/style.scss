@@ -8,11 +8,11 @@
 @import "components/footer-header";
 @import "components/hero";
 @import "components/list";
+@import "components/nav";
 @import "components/submit-feedback";
 
-body {
-  font-family: "Work Sans", sans-serif;
-  margin: 0;
+.container {
+  padding: 1em;
 }
 
 label {

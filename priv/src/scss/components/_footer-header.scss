@@ -25,6 +25,7 @@ footer {
 }
 
 header {
+  &.section-header,
   &.site-header {
     display: flex;
     justify-content: flex-end;

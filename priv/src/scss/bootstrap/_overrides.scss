@@ -1,0 +1,39 @@
+.btn {
+  font-family: $font__display;
+}
+
+.form-control {
+    border-bottom: $input-border-width solid $input-border-color;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  
+    &:focus {
+      box-shadow: none;
+    }
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.nav-item {
+  .offcanvas & {
+    border-bottom: 2px solid $color__v8ch-light-green;
+    font-family: $font__display;
+    font-size: 2em;
+  }
+}
+
+.nav-link {
+  .offcanvas & {
+    padding: 0.75em 0;
+  }
+}
+
+.text-light {
+  & a {
+    color: $color__v8ch-light-green;
+  }
+}
