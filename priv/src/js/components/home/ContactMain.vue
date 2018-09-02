@@ -122,9 +122,4 @@ export default {
 </script>
 
 <style lang="scss">
-.social-icons {
-  & > :not(:last-child) {
-    padding: 0 1em 0 0;
-  }
-}
 </style>
