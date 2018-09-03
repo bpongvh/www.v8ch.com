@@ -5,6 +5,7 @@ defmodule V8chWeb.GraphQlTypes.FeaturedLink do
   object :featured_link do
     field(:description, :string)
     field(:id, :id)
+    field(:inserted_at, :iso8601)
     field(:href, :string)
     field(:title, :string)
   end
