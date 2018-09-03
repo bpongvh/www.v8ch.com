@@ -4,15 +4,23 @@
 @import "typography";
 @import "utilities";
 @import "variables";
+@import "components/article";
 @import "components/content-block";
 @import "components/footer-header";
 @import "components/hero";
+@import "components/images";
 @import "components/list";
+@import "components/nav";
+@import "components/syntax";
 @import "components/submit-feedback";
 
-body {
-  font-family: "Work Sans", sans-serif;
-  margin: 0;
+.container {
+  max-width: 1600px;
+  padding: 1em;
+
+  @include media-breakpoint-up(md) {
+    margin: auto;
+  }
 }
 
 label {
@@ -25,5 +33,11 @@ label {
 
   @include media-breakpoint-up(lg) {
     font-size: 1.5em;
+  }
+}
+
+.social-icons {
+  & > :not(:last-child) {
+    margin: 0 1em 0 0;
   }
 }

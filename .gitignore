@@ -10,3 +10,4 @@ priv/static/*
 .env
 v8ch.pid
 v8ch.service
+yarn-error.log

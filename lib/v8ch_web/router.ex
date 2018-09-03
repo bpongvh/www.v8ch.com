@@ -27,6 +27,7 @@ defmodule V8chWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/blog", PageController, :index
     get "/login", AuthenticationController, :login
     get "/logout", AuthenticationController, :logout
     get "/trivia-challenge", PageController, :trivia_challenge

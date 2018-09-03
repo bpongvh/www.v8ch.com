@@ -67,17 +67,6 @@
   }
 }
 
-// .content-block__columns {
-//   @include media-breakpoint-up(md) {
-//     columns: 2;
-//     column-gap: 2em;
-//   }
-
-//   & .featured-link {
-//     break-inside: avoid;
-//   }
-// }
-
 .content-block--vcenter {
   align-content: center;
 }

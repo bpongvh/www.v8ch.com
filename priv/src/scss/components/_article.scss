@@ -1,0 +1,71 @@
+article {
+  &.blog-post {
+    background-color: $color__v8ch-xlight-green;
+    margin: 3em auto 0;
+
+    @include media-breakpoint-up(xl) {
+      margin: 6em auto 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 66.66666667%;
+  }
+}
+
+.article-header {
+  h2 {
+    font-size: 2em;
+    padding: 2em 0.5em 1em;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 3em;
+      padding: 1.66666667em 2em 0.66666667em;
+    }
+  }
+}
+
+.article-header__kicker {
+  display: flex;
+  justify-content: flex-end;
+
+  & h5 {
+    background-color: $color__v8ch-green;
+    font-family: $font__display;
+    font-size: 0.625em;
+    padding: 1em;
+
+    @include media-breakpoint-up(xl) {
+        font-size: 1em;
+        padding: 1.5em;
+    }
+  }
+}
+
+.post-content {
+  padding: 0 0 2em;
+
+  & p {
+    line-height: 1.25;
+    padding: 0 1em;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.25em;
+      padding: 0 4.8em;
+    }
+  }
+
+  & pre {
+    background-color: $color__v8ch-xdark-green;
+    color: $color__v8ch-light-green;
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.25;
+    overflow-x: auto;
+    padding: 1.33333333em;
+
+    @include media-breakpoint-up(xl) {
+      padding: 2em 6em;
+    }
+  }
+}

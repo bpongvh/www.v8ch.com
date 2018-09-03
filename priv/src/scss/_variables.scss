@@ -1,8 +1,37 @@
-$color__v8ch-xlight-green: #f6ffeb;
-$color__v8ch-light-green: #dcedc8;
-$color__v8ch-green: #adf083;
+$color__v8ch-cyan: #10e5e5;
 $color__v8ch-dark-green: #4f6d3c;
+$color__v8ch-green: #adf083;
+$color__v8ch-light-green: #dcedc8;
+$color__v8ch-red: #ff361b;
 $color__v8ch-xdark-green: #354a28;
+$color__v8ch-xlight-green: #f6ffeb;
+$color__v8ch-yellow: #ffd15d;
 
 $font__display: 'Lato', sans-serif;
 $font__fixed: 'Roboto Mono', monospace;
+
+$white: $color__v8ch-xlight-green;
+$primary: $color__v8ch-dark-green;
+$secondary: $color__v8ch-green;
+$light: $color__v8ch-light-green;
+$dark: $color__v8ch-xdark-green;
+$black: $color__v8ch-xdark-green;
+
+$enable-rounded: false;
+
+$body-bg: $color__v8ch-light-green;
+
+$font-family-sans-serif: "Work Sans", sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
+
+$line-height-base: 1;
+
+$input-bg: $color__v8ch-green;
+$input-border-color: $color__v8ch-dark-green;
+$input-border-width: 2px;
+$input-focus-bg: $color__v8ch-light-green;
+$input-focus-border-color: rgba($primary, 25%);
+$input-placeholder-color: rgba($color__v8ch-dark-green, 0.50);
+
+$navbar-padding-y: 1em;
+$navbar-dark-color: $color__v8ch-light-green;

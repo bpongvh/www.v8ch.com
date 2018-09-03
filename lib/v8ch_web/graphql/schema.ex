@@ -56,14 +56,19 @@ defmodule V8chWeb.GraphQlSchema do
   # Custom types
   # ----------------------
 
-  # scalar :json do
-  #   parse fn input ->
-  #     case Poison.decode(input.value) do
-  #       {:ok, result} -> result
-  #       _ -> :error
-  #     end
-  #   end
+  scalar :iso8601 do
+    parse fn input ->
+      case Timex.parse(Map.get(input, "submittedBy"), "{ISO:Extended:Z}") do
+        {:ok, result} -> result
+        _ -> :error
+      end
+    end
 
-  #   serialize &Poison.encode!/1
-  # end
+    serialize fn (datetime) ->
+      case Timex.format(datetime, "{ISO:Extended:Z}") do
+        {:ok, result} -> result
+        _ -> :error
+      end
+    end
+  end
 end

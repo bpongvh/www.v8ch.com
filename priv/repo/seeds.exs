@@ -47,3 +47,5 @@ insert(:featured_link, %{
   href: "https://www.bakerbrospr.com",
   description: "Custom WordPress theme"
 })
+
+insert_list(3, :post)
