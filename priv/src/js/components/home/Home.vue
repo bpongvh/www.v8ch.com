@@ -18,7 +18,7 @@ import ProjectsMain from './ProjectsMain';
 import SkillsMain from './SkillsMain';
 
 export default {
-  apollo: { featuredLinks: gql`{featuredLinks {createdAt description href title}}` },
+  apollo: { featuredLinks: gql`{featuredLinks {description href title}}` },
   components: {
     ContactMain,
     LandingMain,

@@ -8,12 +8,19 @@
 @import "components/content-block";
 @import "components/footer-header";
 @import "components/hero";
+@import "components/images";
 @import "components/list";
 @import "components/nav";
+@import "components/syntax";
 @import "components/submit-feedback";
 
 .container {
+  max-width: 1600px;
   padding: 1em;
+
+  @include media-breakpoint-up(md) {
+    margin: auto;
+  }
 }
 
 label {

@@ -19,7 +19,7 @@
             {{post.title}}
           </h2>
         </header>
-        <section class="blog-post__content" v-html="post.content" />
+        <section class="post-content" v-html="post.content" />
       </article>
     </main>
   </div>

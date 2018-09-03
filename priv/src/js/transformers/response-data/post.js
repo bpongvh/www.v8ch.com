@@ -1,10 +1,9 @@
 import DOMPurify from "dompurify";
 import moment from "moment";
-import showdown from "showdown";
+import markdown from "../markdown";
 
 export default function(postResponseJson) {
-  const converter = new showdown.Converter();
-  const html = converter.makeHtml(postResponseJson.content);
+  const html = markdown.makeHtml(postResponseJson.content);
   return {
     content: DOMPurify.sanitize(html),
     published: moment().format("ll"),
