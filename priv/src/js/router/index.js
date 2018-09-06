@@ -1,4 +1,5 @@
 import Blog from "../components/blog/Blog";
+import Dashboard from "../components/dashboard/Dashboard";
 import Home from "../components/home/Home";
 
 const routes = [
@@ -11,6 +12,11 @@ const routes = [
     component: Blog,
     name: "blog",
     path: "/blog"
+  },
+  {
+    component: Dashboard,
+    name: "dashboard",
+    path: "/dashboard"
   }
 ];
 

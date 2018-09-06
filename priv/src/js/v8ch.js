@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./components/App.vue";
+import Admin from "./components/Admin.vue";
 import routes from "./router/index";
 
 // Apollo config
@@ -31,5 +32,11 @@ const router = new VueRouter({ mode: "history", routes });
 new Vue({
   provide: apolloProvider.provide(),
   router,
-  render: h => h(App)
+  render: h => {
+    const adminPaths = ["/dashboard"];
+    if (adminPaths.includes(window.location.pathname)) {
+      return h(Admin);
+    }
+    return h(App);
+  }
 }).$mount("#v8ch");
