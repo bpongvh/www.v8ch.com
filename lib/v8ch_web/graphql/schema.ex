@@ -5,8 +5,10 @@ defmodule V8chWeb.GraphQlSchema do
   alias V8chWeb.GraphQlFields.FeaturedLinksMutations
   alias V8chWeb.GraphQlFields.FeaturedLinksQueries
   alias V8chWeb.GraphQlTypes.Post
+  alias V8chWeb.GraphQlTypes.Session
   alias V8chWeb.GraphQlFields.PostsMutations
   alias V8chWeb.GraphQlFields.PostsQueries
+  alias V8chWeb.GraphQlFields.SessionMutations
 
   # ----------------------
   # Import fields
@@ -16,6 +18,7 @@ defmodule V8chWeb.GraphQlSchema do
   import_types(FeaturedLinksQueries)
   import_types(PostsMutations)
   import_types(PostsQueries)
+  import_types(SessionMutations)
 
   # ----------------------
   # Import Types
@@ -23,6 +26,7 @@ defmodule V8chWeb.GraphQlSchema do
 
   import_types(FeaturedLink)
   import_types(Post)
+  import_types(Session)
 
   # ----------------------
   # Import queries
