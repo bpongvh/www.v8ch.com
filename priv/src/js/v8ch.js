@@ -10,6 +10,7 @@ import VueRouter from "vue-router";
 import App from "./components/App.vue";
 import Admin from "./components/Admin.vue";
 import routes from "./router/index";
+import store from "./store/index";
 
 // Apollo config
 const httpLink = new HttpLink({ uri: process.env.GRAPHQL_HOST_URI });
@@ -38,5 +39,6 @@ new Vue({
       return h(Admin);
     }
     return h(App);
-  }
+  },
+  store
 }).$mount("#v8ch");
