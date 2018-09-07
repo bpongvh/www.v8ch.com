@@ -14,7 +14,7 @@
   export default {
     components: { Dashboard, Offcanvas },
     computed: {
-      ...mapState("session", { errors: state => state.errors })
+      ...mapState("session", { errors: state => state.errors, tokens: state => state.tokens })
     },
     data() {
       return { isOffcanvasShowing: false };
@@ -26,7 +26,8 @@
       }
     },  
     mounted() {
-      if (this.$route.query.code) {
+      // Handles case of redirect to /dashboard on login
+      if (this.$route.query.code & !this.tokens) {
         this.fetchTokens(this.$route.query.code);
       }
       
