@@ -73,6 +73,7 @@
     "vue-loader": "^15.2.1",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.16",
+    "vuex": "^3.0.1",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.5"
@@ -87,6 +88,9 @@
       "plugin:prettier/recommended"
     ],
     "parser": "vue-eslint-parser",
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
     "plugins": [
       "prettier"
     ],
