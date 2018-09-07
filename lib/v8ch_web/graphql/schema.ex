@@ -1,6 +1,7 @@
 defmodule V8chWeb.GraphQlSchema do
   use Absinthe.Schema
 
+  alias V8chWeb.GraphQlFields.ContactsMutations
   alias V8chWeb.GraphQlFields.ContactsQueries
   alias V8chWeb.GraphQlFields.FeaturedLinksMutations
   alias V8chWeb.GraphQlFields.FeaturedLinksQueries
@@ -14,6 +15,7 @@ defmodule V8chWeb.GraphQlSchema do
   # Import fields
   # ----------------------
 
+  import_types(ContactsMutations)
   import_types(ContactsQueries)
   import_types(FeaturedLinksMutations)
   import_types(FeaturedLinksQueries)
@@ -43,6 +45,7 @@ defmodule V8chWeb.GraphQlSchema do
   # ----------------------
 
   mutation do
+    import_fields(:contacts_mutations)
     import_fields(:featured_links_mutations)
     import_fields(:posts_mutations)
   end

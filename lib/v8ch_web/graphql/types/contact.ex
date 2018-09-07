@@ -4,6 +4,7 @@ defmodule V8chWeb.GraphQlTypes.Contact do
   @desc "Contact query object"
   object :contact do
     field(:email, :string)
+    field(:id, :id)
     field(:message, :string)
     field(:inserted_at, :iso8601)
   end
@@ -18,5 +19,11 @@ defmodule V8chWeb.GraphQlTypes.Contact do
   input_object :contact_create_input do
     field :email, non_null(:string)
     field :message, non_null(:string)
+  end
+
+  @desc "Contact input object for update requests"
+  input_object :contact_update_input do
+    field :email, non_null(:string)
+    field :message, non_null(:integer)
   end
 end

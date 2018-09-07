@@ -8,7 +8,6 @@ defmodule V8chWeb.GraphQlFields.ContactsMutations do
   object :contacts_mutations do
     field :create_contact, :contact_mutation_result do
       arg(:data, non_null(:contact_create_input))
-      middleware CheckAuthenticationMiddleware
       resolve(&ContactsResolver.create_contact/3)
       middleware HandleChangesetErrorsMiddleware
     end
