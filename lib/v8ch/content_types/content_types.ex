@@ -6,6 +6,7 @@ defmodule V8ch.ContentTypes do
   import Ecto.Query, warn: false
 
   @behaviour V8ch.Behaviours.FeaturedLink
+  @behaviour V8ch.Behaviours.Post
 
   alias V8ch.Repo
   alias V8ch.ContentTypes.FeaturedLink
@@ -133,7 +134,7 @@ defmodule V8ch.ContentTypes do
       ** (Ecto.NoResultsError)
 
   """
-  def get_post!(id), do: Repo.get!(Post, id)
+  def get_post(id), do: Repo.get(Post, id)
 
   @doc """
   Creates a post.
