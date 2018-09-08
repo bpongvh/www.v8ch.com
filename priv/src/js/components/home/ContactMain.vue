@@ -75,51 +75,48 @@
 </template>
 
 <script type="text/babel">
-import GithubLogo from '../icons/GithubLogo.vue';
-import TwitterLogo from '../icons/TwitterLogo.vue';
-import V8chLogo from '../icons/V8chLogo.vue';
-import V8chLogotype from '../icons/V8chLogotype.vue';
-import ApiService from '../../services/api-service';
+  import GithubLogo from '../icons/GithubLogo.vue';
+  import TwitterLogo from '../icons/TwitterLogo.vue';
+  import V8chLogo from '../icons/V8chLogo.vue';
+  import V8chLogotype from '../icons/V8chLogotype.vue';
+  import ApiService from '../../services/api-service';
 
-export default {
-  components: {
-    GithubLogo,
-    TwitterLogo,
-    V8chLogo,
-    V8chLogotype,
-  },
-
-  // ----------------------
-  // Data
-  // ----------------------
-
-  data() {
-    return {
-      email: '',
-      isSubmitted: false,
-      message: '',
-    };
-  },
-
-  // ----------------------
-  // Methods
-  // ----------------------
-
-  methods: {
-    onSubmit() {
-      const post = { email: this.email, message: this.message };
-      ApiService.post('/api/v1/contact', post)
-        .then(() => { this.isSubmitted = true; });
+  export default {
+    components: {
+      GithubLogo,
+      TwitterLogo,
+      V8chLogo,
+      V8chLogotype,
     },
-    viewAtGithub() {
-      window.location.href = 'https://github.com/V8CH';
+
+    // ----------------------
+    // Data
+    // ----------------------
+
+    data() {
+      return {
+        email: '',
+        isSubmitted: false,
+        message: '',
+      };
     },
-    viewAtTwitter() {
-      window.location.href = 'https://twitter.com/bponghneng';
+
+    // ----------------------
+    // Methods
+    // ----------------------
+
+    methods: {
+      onSubmit() {
+        const post = { email: this.email, message: this.message };
+        ApiService.post('/api/v1/contact', post)
+          .then(() => { this.isSubmitted = true; });
+      },
+      viewAtGithub() {
+        window.location.href = 'https://github.com/V8CH';
+      },
+      viewAtTwitter() {
+        window.location.href = 'https://twitter.com/bponghneng';
+      },
     },
-  },
-};
+  };
 </script>
-
-<style lang="scss">
-</style>
