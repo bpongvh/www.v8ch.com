@@ -4,7 +4,7 @@
       <h2>Contact</h2>
     </header>
     <div
-      v-if="!isSubmitted"
+      v-if="!isContactSubmitted"
       class="content-block content-block--form"
     >
       <form
@@ -79,37 +79,24 @@
   import TwitterLogo from '../icons/TwitterLogo.vue';
   import V8chLogo from '../icons/V8chLogo.vue';
   import V8chLogotype from '../icons/V8chLogotype.vue';
-  import ApiService from '../../services/api-service';
 
   export default {
     components: {
       GithubLogo,
       TwitterLogo,
       V8chLogo,
-      V8chLogotype,
+      V8chLogotype
     },
-
-    // ----------------------
-    // Data
-    // ----------------------
-
     data() {
       return {
         email: '',
-        isSubmitted: false,
-        message: '',
+        message: ''
       };
     },
-
-    // ----------------------
-    // Methods
-    // ----------------------
-
     methods: {
       onSubmit() {
-        const post = { email: this.email, message: this.message };
-        ApiService.post('/api/v1/contact', post)
-          .then(() => { this.isSubmitted = true; });
+        const contact = { email: this.email, message: this.message };
+        this.$emit("save-contact", contact);
       },
       viewAtGithub() {
         window.location.href = 'https://github.com/V8CH';
@@ -118,5 +105,6 @@
         window.location.href = 'https://twitter.com/bponghneng';
       },
     },
+    props: { isContactSubmitted: Boolean }
   };
 </script>
