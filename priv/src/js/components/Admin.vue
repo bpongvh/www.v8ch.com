@@ -19,9 +19,6 @@
         isOffcanvasShowing: state => state.isOffcanvasShowing,
         tokens: state => state.tokens }
     )},
-    data() {
-      return { isOffcanvasShowing: false };
-    },
     methods: {
       ...mapActions("session", ["fetchTokens"]),
       ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS})
@@ -31,10 +28,6 @@
       if (this.$route.query.code & !this.tokens) {
         this.fetchTokens(this.$route.query.code);
       }
-      
-      AppContext.$on("toggle-offcanvas", () => {
-        this.toggleOffcanvas();
-      });
     },
     watch: {
       "$route"() {
