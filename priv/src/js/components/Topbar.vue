@@ -7,14 +7,11 @@
 </template>
 
 <script type="text/babel">
-import AppContext from "../app-context";
+import {mapMutations} from "vuex";
+import { types as sessionMutations } from "../store/session/mutations";
 
 export default {
-  methods: {
-    toggleOffcanvas() {
-      AppContext.$emit("toggle-offcanvas");
-    }
-  },
+  methods: { ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS}) },
   props: { isDark: Boolean }
 };
 </script>

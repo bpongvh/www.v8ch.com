@@ -6,24 +6,25 @@
 </template>
 
 <script type="text/babel">
-  import { mapActions, mapState } from "vuex";
-  import AppContext from "../app-context";
+  import { mapActions, mapMutations, mapState } from "vuex";
+  import { types as sessionMutations } from "../store/session/mutations";
   import Dashboard from './dashboard/Dashboard.vue';
   import Offcanvas from './Offcanvas.vue';
 
   export default {
     components: { Dashboard, Offcanvas },
     computed: {
-      ...mapState("session", { errors: state => state.errors, tokens: state => state.tokens })
-    },
+      ...mapState("session", {
+        errors: state => state.errors,
+        isOffcanvasShowing: state => state.isOffcanvasShowing,
+        tokens: state => state.tokens }
+    )},
     data() {
       return { isOffcanvasShowing: false };
     },
     methods: {
       ...mapActions("session", ["fetchTokens"]),
-      toggleOffcanvas() {
-        this.isOffcanvasShowing = !this.isOffcanvasShowing;
-      }
+      ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS})
     },  
     mounted() {
       // Handles case of redirect to /dashboard on login
@@ -37,7 +38,9 @@
     },
     watch: {
       "$route"() {
-        this.isOffcanvasShowing = false;
+        if (this.isOffcanvasShowing) {
+          this.toggleOffcanvas();
+        }
       }
     }
   };

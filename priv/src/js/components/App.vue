@@ -6,28 +6,20 @@
 </template>
 
 <script type="text/babel">
-import AppContext from "../app-context";
+import {mapMutations, mapState} from "vuex";
+import { types as sessionMutations } from "../store/session/mutations";
 import Home from './home/Home.vue';
 import Offcanvas from './Offcanvas.vue';
 
 export default {
   components: { Home, Offcanvas },
-  data() {
-    return { isOffcanvasShowing: false };
-  },
-  methods: {
-    toggleOffcanvas() {
-      this.isOffcanvasShowing = !this.isOffcanvasShowing;
-    }
-  },  
-  mounted() {
-    AppContext.$on("toggle-offcanvas", () => {
-      this.toggleOffcanvas();
-    });
-  },
+  computed: {...mapState("session", {isOffcanvasShowing: (state) => state.isOffcanvasShowing})},
+  methods: { ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS}) }, 
   watch: {
     "$route"() {
-      this.isOffcanvasShowing = false;
+      if (this.isOffcanvasShowing) {
+        this.toggleOffcanvas();
+      }
     }
   }
 };

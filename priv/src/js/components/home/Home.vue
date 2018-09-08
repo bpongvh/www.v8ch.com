@@ -9,30 +9,27 @@
 </template>
 
 <script type="text/babel">
-import gql from 'graphql-tag';
-import AppContext from "../../app-context";
-import Topbar from "../Topbar";
-import ContactMain from './ContactMain';
-import LandingMain from './LandingMain';
-import ProjectsMain from './ProjectsMain';
-import SkillsMain from './SkillsMain';
+  import gql from 'graphql-tag';
+  import {mapMutations} from "vuex";
+  import { types as sessionMutations } from "../../store/session/mutations";
+  import Topbar from "../Topbar";
+  import ContactMain from './ContactMain';
+  import LandingMain from './LandingMain';
+  import ProjectsMain from './ProjectsMain';
+  import SkillsMain from './SkillsMain';
 
-export default {
-  apollo: { featuredLinks: gql`{featuredLinks {description href title}}` },
-  components: {
-    ContactMain,
-    LandingMain,
-    ProjectsMain,
-    SkillsMain,
-    Topbar
-  },
-  data() {
-    return { featuredLinks: [] };
-  },
-  methods: {
-    toggleOffcanvas() {      
-      AppContext.$emit("toggle-offcanvas");
-    }
-  },
-}
+  export default {
+    apollo: { featuredLinks: gql`{featuredLinks {description href title}}` },
+    components: {
+      ContactMain,
+      LandingMain,
+      ProjectsMain,
+      SkillsMain,
+      Topbar
+    },
+    data() {
+      return { featuredLinks: [] };
+    },
+    methods: { ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS}) },
+  }
 </script>
