@@ -1,10 +1,10 @@
 import Blog from "../components/blog/Blog";
-import Dashboard from "../components/dashboard/Dashboard";
-import Home from "../components/home/Home";
+import DashboardContainer from "../components/dashboard/Container";
+import HomeContainer from "../components/home/Container";
 
 const routes = [
   {
-    component: Home,
+    component: HomeContainer,
     name: "home",
     path: "/"
   },
@@ -14,7 +14,7 @@ const routes = [
     path: "/blog"
   },
   {
-    component: Dashboard,
+    component: DashboardContainer,
     name: "dashboard",
     path: "/dashboard"
   }
