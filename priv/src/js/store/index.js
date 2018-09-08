@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import PersistedState from "vuex-persistedstate";
+import contact from "./contact/index";
 import session from "./session/index";
+import { types as contactTypes } from "./contact/mutations";
 import { types as sessionTypes } from "./session/mutations";
 
 Vue.use(Vuex);
@@ -9,20 +11,27 @@ Vue.use(Vuex);
 // Config vuex-persistedstate
 const persistedState = PersistedState({
   filter: mutation => {
-    switch (mutation.payload.type) {
-      case sessionTypes.SET_TOKENS:
+    switch (mutation.type) {
+      case `contact/${contactTypes.SET_IS_CONTACT_SUBMITTED}`:
+      case `session/${sessionTypes.SET_TOKENS}`:
         return true;
       default:
         return false;
     }
   },
-  paths: ["session"],
+  paths: ["contact", "session"],
   reducer: state => {
-    return Object.assign({}, { session: { tokens: state.session.tokens } });
+    return Object.assign(
+      {},
+      {
+        contact: { isContactSubmitted: state.contact.isContactSubmitted },
+        session: { tokens: state.session.tokens }
+      }
+    );
   }
 });
 
 export default new Vuex.Store({
-  modules: { session },
+  modules: { contact, session },
   plugins: [persistedState]
 });
