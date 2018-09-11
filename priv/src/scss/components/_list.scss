@@ -1,8 +1,33 @@
-.content-list {
-    & h3 {
-      font-size: 1.5em;
-      margin: 1.33333333em 0 0.66666666em;
+.content-list__header {
+  margin: 2em 0 1em;
+
+  @include media-breakpoint-up(md) {
+    margin: 4em 0 2em;
+  }
+
+  & .svg-inline--fa {
+    font-size: 1.25em;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.75em;
     }
+  }
+
+  & h3 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2em;
+    }
+  }
+}
+
+.content-list__header--action {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .featured-link-list {
@@ -74,6 +99,13 @@ li {
   }
 }
 
+.list-group-item__actions {
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .list-group-item__header {
   & h4 {
     margin: 0;
@@ -81,10 +113,27 @@ li {
     @include media-breakpoint-up(sm) {
       font-size: 1.25em;
     }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5em;
+    }
   }
 
   & p {
     font-size: 0.75em;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1em;
+    }
+  }
+}
+
+section {
+  &.content-list {
+    @include media-breakpoint-up(md) {
+      margin: 0 auto;
+      width: 66.66666667%;
+    }
   }
 }
 
