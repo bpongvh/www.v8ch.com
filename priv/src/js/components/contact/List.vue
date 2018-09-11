@@ -1,7 +1,10 @@
 <template>
-  <div class="list-group">
-    <contact-list-item :contact="contact" :key="index" v-for="(contact, index) in contacts" />
-  </div>
+  <section class="content-list">  
+    <div class="list-group">
+      <h3>Contacts</h3>
+      <contact-list-item :contact="contact" :key="index" v-for="(contact, index) in contacts" />
+    </div>
+  </section>
 </template>
 
 <script type="text/babel">

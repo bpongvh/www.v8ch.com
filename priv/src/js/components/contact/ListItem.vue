@@ -1,14 +1,14 @@
 <template>
-  <a
-    href="#"
-    class="list-group-item list-group-item-action align-items-start"
-  >
-    <div class="">
-      <h5 class="mb-1">{{contact.email}}</h5>
-      <small>{{posted}}</small>
+  <div class="list-group-item">
+    <div class="list-group-item__header">
+      <h4>{{contact.email}}</h4>
+      <p>{{posted}}</p>
     </div>
-    <p class="mb-1">{{contact.message}}</p>
-  </a>
+    <p>{{contact.message}}</p>
+    <div class="list-group-item__actions">
+      <button class="btn btn-link" type="button">Delete</button>
+    </div>
+  </div>
 </template>
 
 <script type="text/babel">
