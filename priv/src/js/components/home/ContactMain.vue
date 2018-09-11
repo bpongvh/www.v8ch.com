@@ -75,10 +75,10 @@
 </template>
 
 <script type="text/babel">
-  import GithubLogo from '../icons/GithubLogo.vue';
-  import TwitterLogo from '../icons/TwitterLogo.vue';
-  import V8chLogo from '../icons/V8chLogo.vue';
-  import V8chLogotype from '../icons/V8chLogotype.vue';
+  import GithubLogo from '../shared/icons/GithubLogo.vue';
+  import TwitterLogo from '../shared/icons/TwitterLogo.vue';
+  import V8chLogo from '../shared/icons/V8chLogo.vue';
+  import V8chLogotype from '../shared/icons/V8chLogotype.vue';
 
   export default {
     components: {
