@@ -2,6 +2,14 @@
   font-family: $font__display;
 }
 
+.btn-link {
+  .list-group-item__actions & {
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
 .form-control {
     border-bottom: $input-border-width solid $input-border-color;
     border-left: none;
@@ -11,6 +19,14 @@
     &:focus {
       box-shadow: none;
     }
+}
+
+.list-group-item {
+  border-top: 1px solid $color__v8ch-green;
+  box-shadow: 0 0.0625em 0.0625em $color__v8ch-green;
+  .content-list & {
+    margin: 0 0 0.5em;
+  }
 }
 
 .navbar-toggler {
