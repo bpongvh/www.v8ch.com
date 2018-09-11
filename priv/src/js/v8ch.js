@@ -3,7 +3,7 @@ import { ApolloClient } from "apollo-client";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -23,7 +23,7 @@ const apolloProvider = new VueApollo({ defaultClient: apolloClient });
 Vue.use(VueApollo);
 
 // Font Awesome config
-library.add(faBars, faTimes);
+library.add(faBars, faPlus, faTimes);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 // Vue Router config
