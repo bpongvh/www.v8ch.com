@@ -13,7 +13,7 @@
   import {mapMutations, mapState} from "vuex";
   import { types as contactMutations } from "../../store/contact/mutations";
   import { types as sessionMutations } from "../../store/session/mutations";
-  import Topbar from "../Topbar";
+  import Topbar from "../shared/Topbar";
   import ContactMain from './ContactMain';
   import LandingMain from './LandingMain';
   import ProjectsMain from './ProjectsMain';

@@ -8,7 +8,7 @@
 
 <script type="text/babel">
 import {mapMutations} from "vuex";
-import { types as sessionMutations } from "../store/session/mutations";
+import { types as sessionMutations } from "../../store/session/mutations";
 
 export default {
   methods: { ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS}) },

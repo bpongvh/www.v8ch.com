@@ -26,30 +26,30 @@
 </template>
 
 <script type="text/babel">
-import gql from "graphql-tag";
-import moment from "moment";
-import Topbar from "../Topbar";
-import postResponseTransformer from "../../transformers/response-data/post";
+  import gql from "graphql-tag";
+  import moment from "moment";
+  import {mapMutations} from "vuex";
+  import Topbar from "../shared/Topbar";
+  import { types as sessionMutations } from "../../store/session/mutations";
+  import postResponseTransformer from "../../transformers/response-data/post";
 
-export default {
-  apollo: {
-    postsResponse: {
-      query: gql`{posts { content id insertedAt title }}`,
-      update(response) {
-        return response.posts;
+  export default {
+    apollo: {
+      postsResponse: {
+        query: gql`{posts { content id insertedAt title }}`,
+        update(response) {
+          return response.posts;
+        }
       }
-    }
-  },
-  components: { Topbar },
-  computed: {
-    posts() {
-      return this.postsResponse ? this.postsResponse.map(post => postResponseTransformer(post)) : null;
-    }
-  },
-  methods: {
-    toggleOffcanvas() {      
-      AppContext.$emit("toggle-offcanvas");
+    },
+    components: { Topbar },
+    computed: {
+      posts() {
+        return this.postsResponse ? this.postsResponse.map(post => postResponseTransformer(post)) : null;
+      }
+    },
+    methods: {
+      ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS})
     }
   }
-}
 </script>
