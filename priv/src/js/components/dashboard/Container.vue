@@ -8,7 +8,11 @@
         <content-list title="Contacts">
           <contact-list-item :contact="contact" :key="index" v-for="(contact, index) in contacts" />
         </content-list>       
-        <content-list title="Recent Posts">
+        <content-list>
+          <div class="content-list__header content-list__header--action">
+            <h3>Recent Posts</h3>
+            <font-awesome-icon icon="plus" />
+          </div>
           <post-list-item :post="post" :key="index" v-for="(post, index) in posts" />
         </content-list>
       </div>
