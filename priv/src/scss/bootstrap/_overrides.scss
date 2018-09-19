@@ -8,7 +8,8 @@
     border-right: none;
     border-top: none;
   
-    &:focus {
+    &:focus,
+    &.is-invalid:focus {
       box-shadow: none;
     }
 }
