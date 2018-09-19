@@ -5,14 +5,6 @@
     margin: 4em 0 2em;
   }
 
-  & .svg-inline--fa {
-    font-size: 1.25em;
-
-    @include media-breakpoint-up(md) {
-      font-size: 1.75em;
-    }
-  }
-
   & h3 {
     font-size: 1.5em;
     line-height: 1;
@@ -39,7 +31,8 @@
 
 li {
   .featured-link-list &,
-  .keyword-list & {
+  .keyword-list &,
+  .tabs-list & {
     list-style: none;
   }
 
@@ -74,8 +67,17 @@ li {
     font-family: $font__display;
     font-size: 2em;
   }
+
   & .keyword-list__description {
     display: block;
+  }
+
+  .tabs-list & {
+    padding: 0.75em;
+
+    &.active {
+      border-bottom: 1px solid $color__v8ch-dark-green;
+    }
   }
 }
 
@@ -159,5 +161,14 @@ ul {
     @include media-breakpoint-up(lg) {
       font-size: 2em;
     }
+  }
+
+  &.tabs-list {
+    display: flex;
+    justify-content: flex-end;
+    font-family: $font__display;
+    font-size: 0.8em;
+    margin: 0 0 1.25em 0;
+    padding: 0;
   }
 }
