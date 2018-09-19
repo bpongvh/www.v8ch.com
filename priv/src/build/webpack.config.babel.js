@@ -172,7 +172,7 @@ export default (env = {}) => {
       devtoolModuleFilenameTemplate: "webpack:///[absolute-resource-path]",
       filename: env.production ? "js/[name].[hash].js" : "js/[name].js",
       path: path.join(process.cwd(), config.paths.output),
-      publicPath: ""
+      publicPath: "/"
     },
     plugins: env.production ? productionPlugins : developmentPlugins,
     resolve: {
