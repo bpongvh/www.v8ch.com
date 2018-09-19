@@ -1,6 +1,6 @@
 <template>
   <div>
-    <topbar @toggle-offcanvas="toggleOffcanvas" :is-dark="true" />
+    <topbar :is-dark="true" />
     <landing-main logo-size="medium" />
     <skills-main />
     <projects-main :projects="featuredLinks" />
