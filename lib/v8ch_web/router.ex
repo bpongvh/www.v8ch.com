@@ -31,6 +31,7 @@ defmodule V8chWeb.Router do
     get "/dashboard", PageController, :index
     get "/login", AuthenticationController, :login
     get "/logout", AuthenticationController, :logout
+    get "/post/add", PageController, :index
     get "/trivia-challenge", PageController, :trivia_challenge
     get "/trivia-challenge/about", PageController, :trivia_challenge
     get "/trivia-challenge/answer/:sequence", PageController, :trivia_challenge
