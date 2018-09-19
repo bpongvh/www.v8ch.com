@@ -1,30 +1,29 @@
 <template>
     <div>
-      <topbar @toggle-offcanvas="toggleOffcanvas" theme="dark" />
+      <topbar />
       <header class="section-header">
         <h2>Dashboard</h2>
       </header>
-      <div class="container">        
+      <main class="container">        
         <content-list title="Contacts">
           <contact-list-item :contact="contact" :key="index" v-for="(contact, index) in contacts" />
         </content-list>       
         <content-list>
           <div class="content-list__header content-list__header--action">
             <h3>Recent Posts</h3>
-            <font-awesome-icon icon="plus" />
+            <action-button :do-action="addPost" icon="plus" />
           </div>
           <post-list-item :post="post" :key="index" v-for="(post, index) in posts" />
         </content-list>
-      </div>
+      </main>
     </div>
 </template>
 
 <script type="text/babel">
   import gql from 'graphql-tag';
-  import {mapMutations} from "vuex";
-  import { types as sessionMutations } from "../../store/session/mutations";
   import ContactListItem from "../contact/ListItem";
   import PostListItem from "../post/ListItem";
+  import ActionButton from "../shared/ActionButton";
   import ContentList from "../shared/ContentList";
   import Topbar from "../shared/Topbar";
 
@@ -33,9 +32,11 @@
       contacts: gql`{contacts {email id insertedAt message}}`,
       posts: gql`{posts {content id insertedAt title}}`
     },
-    components: {ContactListItem, ContentList, PostListItem, Topbar},
+    components: {ActionButton, ContactListItem, ContentList, PostListItem, Topbar},
     methods: {
-      ...mapMutations("session", {toggleOffcanvas: sessionMutations.TOGGLE_OFFCANVAS})
+      addPost() {
+        this.$router.push("/post/add");
+      }
     },
   }
 </script>
