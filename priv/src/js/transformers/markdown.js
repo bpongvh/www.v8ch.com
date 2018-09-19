@@ -2,7 +2,7 @@ import highlightjs from "highlight.js";
 import showdown from "showdown";
 
 showdown.extension("highlightjs", function() {
-  // Use Showdown's regexp engine to conditionally parse codeblocks
+  // Use Showdown's regexp engine to conditionally parse code blocks
   const left = "<pre><code\\b[^>]*>";
   const right = "</code></pre>";
   const flags = "g";
@@ -35,9 +35,9 @@ showdown.extension("highlightjs", function() {
   ];
 });
 
-const ShowdownConverter = () => {
+const markdownTransformer = () => {
   const converter = new showdown.Converter({ extensions: ["highlightjs"] });
   return converter;
 };
 
-export default ShowdownConverter();
+export default markdownTransformer();
