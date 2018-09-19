@@ -85,6 +85,7 @@
       "jest": true
     },
     "extends": [
+      "prettier",
       "plugin:vue/recommended",
       "plugin:prettier/recommended"
     ],
@@ -93,7 +94,8 @@
       "ecmaVersion": 2018
     },
     "plugins": [
-      "prettier"
+      "prettier",
+      "vue"
     ],
     "rules": {
       "prettier/prettier": "error"
