@@ -7,11 +7,19 @@ defmodule V8chWeb.GraphQlResolvers.Posts do
     end
   end
 
+  def get_post(_, %{id: id}, _) do
+    fetch_post(id)
+  end
+
   def delete_post(_, %{id: id}, _) do
     with {:ok, post} <- fetch_post(id),
         {:ok, deleted} <- @posts_module.delete_post(post) do
       {:ok, %{post: deleted}}
     end
+  end
+
+  def list_posts(_, _, _) do
+    {:ok, @posts_module.list_posts()}
   end
 
   def update_post(_, %{data: params}, _) do
