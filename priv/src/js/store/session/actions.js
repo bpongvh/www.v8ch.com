@@ -1,4 +1,4 @@
-import Api from "./api";
+import Api from "../../services/aws-cognito-authentication";
 import { types } from "./mutations";
 
 export default {
@@ -16,6 +16,24 @@ export default {
       })
       .catch(error => {
         commit({ error: error.message, type: types.PUSH_ERROR });
+      });
+  },
+  refreshTokens({ commit, state }) {
+    Api.postRefreshToken(state.tokens.refresh)
+      .then(response => {
+        commit({
+          tokens: {
+            ...state.tokens,
+            access: response.access_token,
+            id: response.id_token
+          },
+          type: types.SET_TOKENS
+        });
+        return Promise.resolve();
+      })
+      .catch(error => {
+        commit({ error: error.message, type: types.PUSH_ERROR });
+        return Promise.reject();
       });
   }
 };
