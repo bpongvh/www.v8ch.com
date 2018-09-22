@@ -1,9 +1,30 @@
 import Topbar from "../shared/Topbar";
 import PostForm from "./Form";
 // import mutations from "../../graphql/mutations";
-// import queries from "../../graphql/queries";
+import queries from "../../graphql/queries";
+import postResponseTransformer from "../../transformers/response-data/post";
 
 export default {
+  apollo: {
+    postResponse: {
+      query: queries.GET_POST,
+      update(response) {
+        return response.post;
+      },
+      variables() {
+        return {
+          data: this.$route.params.id
+        };
+      }
+    }
+  },
+  computed: {
+    post() {
+      return this.postResponse
+        ? postResponseTransformer(this.postResponse)
+        : null;
+    }
+  },
   methods: {
     close() {
       this.$router.push("/dashboard");
@@ -35,7 +56,7 @@ export default {
           <h2>Edit Post</h2>
         </header>
         <main class="container">
-          <PostForm save={this.save} />
+          <PostForm initialValues={this.post} save={this.save} />
         </main>
       </div>
     );
