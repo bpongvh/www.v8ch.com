@@ -2,6 +2,10 @@ import moment from "moment";
 
 export default {
   props: {
+    editPost: {
+      required: true,
+      type: Function
+    },
     post: {
       required: true,
       type: Object
@@ -12,6 +16,11 @@ export default {
       return moment(this.post.insertedAt).fromNow();
     }
   },
+  methods: {
+    onClick() {
+      this.editPost(this.post.id);
+    }
+  },
   render() {
     return (
       <div class="list-group-item">
@@ -20,7 +29,12 @@ export default {
           <p>{this.posted}</p>
         </div>
         <div class="list-group-item__actions">
-          <button class="btn btn-link" type="button">
+          <button
+            class="btn btn-link"
+            name="edit"
+            onClick={this.onClick}
+            type="button"
+          >
             Edit
           </button>
           <button class="btn btn-link" type="button">
