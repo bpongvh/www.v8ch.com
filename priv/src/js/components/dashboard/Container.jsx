@@ -13,6 +13,10 @@ export default {
   methods: {
     addPost() {
       this.$router.push("/post/add");
+    },
+    editPost(id) {
+      console.log(`[DashboardContainer] editPost() id: ${JSON.stringify(id)}`);
+      this.$router.push(`/post/${id}/edit`);
     }
   },
   render() {
@@ -36,7 +40,11 @@ export default {
             </div>
             {this.posts &&
               this.posts.map(post => (
-                <PostListItem post={post} key={post.id} />
+                <PostListItem
+                  editPost={id => this.editPost(id)}
+                  key={post.id}
+                  post={post}
+                />
               ))}
           </ContentList>
         </main>
