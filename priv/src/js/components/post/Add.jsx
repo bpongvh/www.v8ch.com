@@ -1,5 +1,7 @@
 import Topbar from "../shared/Topbar";
 import PostForm from "./Form";
+import mutations from "../../graphql/mutations";
+import queries from "../../graphql/queries";
 
 export default {
   methods: {
@@ -7,7 +9,22 @@ export default {
       this.$router.push("/dashboard");
     },
     save(formData) {
-      console.log(`[PostAdd] save() formData: ${JSON.stringify(formData)}`);
+      this.$apollo
+        .mutate({
+          mutation: mutations.CREATE_POST,
+          update: (store, { data }) => {
+            const updatedData = store.readQuery({ query: queries.LIST_POSTS });
+            updatedData.posts.push(data.createPost.post);
+            store.writeQuery({ query: queries.LIST_POSTS, data: updatedData });
+          },
+          variables: { data: formData }
+        })
+        .then(() => {
+          this.close();
+        })
+        .catch(error => {
+          console.error(`[PostAdd] save() error: ${JSON.stringify(error)}`);
+        });
     }
   },
   render() {
