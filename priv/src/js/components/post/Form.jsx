@@ -6,6 +6,7 @@ import TextInput from "../shared/inputs/Text";
 
 export default {
   props: {
+    initialValues: { default: null, required: false, type: Object },
     save: { required: true, type: Function }
   },
   data() {
@@ -57,7 +58,7 @@ export default {
     return (
       <form class="overlay" novalidate onSubmit={this.handleSubmit}>
         <TextInput
-          initial-value=""
+          initial-value={this.initialValues ? this.initialValues.title : ""}
           label="Title"
           name="title"
           onChange={this.handleChange}
@@ -66,7 +67,9 @@ export default {
           value={this.properties.title.value}
         />
         <MarkdownInput
-          initial-value=""
+          initial-value={
+            this.initialValues ? this.initialValues.content.markdown : ""
+          }
           label="Content"
           name="content"
           onChange={this.handleChange}

@@ -7,10 +7,17 @@ converter.setOption("noHeaderId", true);
 export default {
   mixins: [validatesInput],
   data() {
-    return { markdown: "" };
+    return { htmlOutput: "" };
+  },
+  watch: {
+    initialValue(next, prev) {
+      if (next !== prev) {
+        this.updateHtmlOutput();
+      }
+    }
   },
   mounted() {
-    this.markdown = converter.makeHtml(this.initialValue);
+    this.htmlOutput = converter.makeHtml(this.initialValue);
   },
   methods: {
     editContent() {
@@ -22,7 +29,12 @@ export default {
     previewContent() {
       this.$refs.editPane.blur();
       this.isPreviewing = true;
-      this.markdown = converter.makeHtml(this.value);
+      this.updateHtmlOutput();
+    },
+    updateHtmlOutput() {
+      this.htmlOutput = this.value
+        ? converter.makeHtml(this.value)
+        : converter.makeHtml(this.initialValue);
     }
   },
   render() {
@@ -59,7 +71,7 @@ export default {
           <div
             class={{ "is-invalid": this.applyInvalidCssClass }}
             class="markdown-preview"
-            domPropsInnerHTML={this.markdown}
+            domPropsInnerHTML={this.htmlOutput}
           />
         )}
         <div class="invalid-feedback">{this.errorFeedback}</div>
