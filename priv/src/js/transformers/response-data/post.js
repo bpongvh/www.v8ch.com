@@ -5,7 +5,10 @@ import markdownTransformer from "../markdown";
 export default function(postResponseJson) {
   const html = markdownTransformer.makeHtml(postResponseJson.content);
   return {
-    content: DOMPurify.sanitize(html),
+    content: {
+      html: DOMPurify.sanitize(html),
+      markdown: postResponseJson.content
+    },
     published: moment().format("ll"),
     id: postResponseJson.id,
     title: postResponseJson.title
