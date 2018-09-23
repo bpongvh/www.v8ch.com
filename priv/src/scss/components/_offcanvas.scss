@@ -1,0 +1,20 @@
+
+.offcanvas {
+    background-color: $color__v8ch-dark-green;
+    border-bottom: 1px solid $color__v8ch-light-green;
+    border-right: 1px solid $color__v8ch-light-green;
+    border-top: 1px solid $color__v8ch-light-green;
+    height: calc(100vh - 2px);
+    margin: 1px 1px 0 0;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    transition: 0.3s ease all;
+    // Viewport width without any vertical scrollbar less 1px
+    width: calc(100vw - (100vw - 100%) - 1px);
+    z-index: 1040;
+  
+    &.offcanvas--showing {
+      transform: translateX(calc(100vw - 1px));
+    }
+  }
