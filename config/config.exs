@@ -9,9 +9,10 @@ use Mix.Config
 config :v8ch,
   contacts_module: V8ch.Contacts,
   contexts_module: V8ch.Contexts,
+  ecto_repos: [V8ch.Repo],
   featured_links_module: V8ch.ContentTypes,
   posts_module: V8ch.ContentTypes,
-  ecto_repos: [V8ch.Repo]
+  session_module: V8ch.Sessions
 
 # Configures the endpoint
 config :v8ch, V8chWeb.Endpoint,

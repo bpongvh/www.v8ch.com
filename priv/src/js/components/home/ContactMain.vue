@@ -4,7 +4,7 @@
       <h2>Contact</h2>
     </header>
     <div
-      v-if="!isSubmitted"
+      v-if="!isContactSubmitted"
       class="content-block content-block--form"
     >
       <form
@@ -75,51 +75,36 @@
 </template>
 
 <script type="text/babel">
-import GithubLogo from '../icons/GithubLogo.vue';
-import TwitterLogo from '../icons/TwitterLogo.vue';
-import V8chLogo from '../icons/V8chLogo.vue';
-import V8chLogotype from '../icons/V8chLogotype.vue';
-import ApiService from '../../services/api-service';
+  import GithubLogo from '../shared/icons/GithubLogo.vue';
+  import TwitterLogo from '../shared/icons/TwitterLogo.vue';
+  import V8chLogo from '../shared/icons/V8chLogo.vue';
+  import V8chLogotype from '../shared/icons/V8chLogotype.vue';
 
-export default {
-  components: {
-    GithubLogo,
-    TwitterLogo,
-    V8chLogo,
-    V8chLogotype,
-  },
-
-  // ----------------------
-  // Data
-  // ----------------------
-
-  data() {
-    return {
-      email: '',
-      isSubmitted: false,
-      message: '',
-    };
-  },
-
-  // ----------------------
-  // Methods
-  // ----------------------
-
-  methods: {
-    onSubmit() {
-      const post = { email: this.email, message: this.message };
-      ApiService.post('/api/v1/contact', post)
-        .then(() => { this.isSubmitted = true; });
+  export default {
+    components: {
+      GithubLogo,
+      TwitterLogo,
+      V8chLogo,
+      V8chLogotype
     },
-    viewAtGithub() {
-      window.location.href = 'https://github.com/V8CH';
+    data() {
+      return {
+        email: '',
+        message: ''
+      };
     },
-    viewAtTwitter() {
-      window.location.href = 'https://twitter.com/bponghneng';
+    methods: {
+      onSubmit() {
+        const contact = { email: this.email, message: this.message };
+        this.$emit("save-contact", contact);
+      },
+      viewAtGithub() {
+        window.location.href = 'https://github.com/V8CH';
+      },
+      viewAtTwitter() {
+        window.location.href = 'https://twitter.com/bponghneng';
+      },
     },
-  },
-};
+    props: { isContactSubmitted: Boolean }
+  };
 </script>
-
-<style lang="scss">
-</style>

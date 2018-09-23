@@ -22,6 +22,8 @@
     "apollo-cache-inmemory": "^1.2.6",
     "apollo-client": "^2.3.7",
     "apollo-link": "^1.2.2",
+    "apollo-link-context": "^1.0.9",
+    "apollo-link-error": "^1.1.1",
     "apollo-link-http": "^1.5.4",
     "autoprefixer": "^9.0.2",
     "axios": "^0.18.0",
@@ -73,6 +75,8 @@
     "vue-loader": "^15.2.1",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.16",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4",
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.5"
@@ -83,12 +87,17 @@
       "jest": true
     },
     "extends": [
+      "prettier",
       "plugin:vue/recommended",
       "plugin:prettier/recommended"
     ],
     "parser": "vue-eslint-parser",
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
     "plugins": [
-      "prettier"
+      "prettier",
+      "vue"
     ],
     "rules": {
       "prettier/prettier": "error"

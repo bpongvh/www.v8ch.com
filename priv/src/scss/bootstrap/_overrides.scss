@@ -8,9 +8,23 @@
     border-right: none;
     border-top: none;
   
-    &:focus {
+    &:focus,
+    &.is-invalid:focus {
       box-shadow: none;
     }
+}
+
+.list-group-item {
+  border-top: 1px solid $color__v8ch-green;
+  box-shadow: 0 0.0625em 0.0625em $color__v8ch-green;
+
+  @include media-breakpoint-up(lg) {
+    padding: 2em 6em;
+  }
+
+  .content-list & {
+    margin: 0 0 0.5em;
+  }
 }
 
 .navbar-toggler {

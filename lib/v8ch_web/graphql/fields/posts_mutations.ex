@@ -14,7 +14,7 @@ defmodule V8chWeb.GraphQlFields.PostsMutations do
     end
 
     field :delete_post, :post_mutation_result do
-      arg(:id, non_null(:integer))
+      arg(:data, non_null(:post_delete_input))
       middleware CheckAuthenticationMiddleware
       resolve(&PostsResolver.delete_post/3)
       middleware HandleChangesetErrorsMiddleware

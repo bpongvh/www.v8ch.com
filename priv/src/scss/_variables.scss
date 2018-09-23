@@ -26,12 +26,18 @@ $font-family-monospace: 'Roboto Mono', monospace;
 
 $line-height-base: 1;
 
-$input-bg: $color__v8ch-green;
+$input-bg: transparent;
 $input-border-color: $color__v8ch-dark-green;
 $input-border-width: 2px;
-$input-focus-bg: $color__v8ch-light-green;
+$input-focus-bg: $color__v8ch-xlight-green;
 $input-focus-border-color: rgba($primary, 25%);
+$input-focus-box-shadow: none;
+$input-padding-x: 1em;
+$input-padding-y: 1em;
 $input-placeholder-color: rgba($color__v8ch-dark-green, 0.50);
 
-$navbar-padding-y: 1em;
+$navbar-padding-y: 1rem;
 $navbar-dark-color: $color__v8ch-light-green;
+
+$list-group-item-padding-x: 1em;
+$list-group-item-padding-y: 1em;

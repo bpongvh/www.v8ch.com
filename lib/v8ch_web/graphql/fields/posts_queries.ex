@@ -1,13 +1,15 @@
 defmodule V8chWeb.GraphQlFields.PostsQueries do
   use Absinthe.Schema.Notation
 
-  @posts_module Application.get_env(:v8ch, :posts_module)
+  alias V8chWeb.GraphQlResolvers.Posts, as: PostsResolvers
 
   object :posts_queries do
     field :posts, list_of(:post) do
-      resolve(fn _, _, _ ->
-        {:ok, @posts_module.list_posts()}
-      end)
+      resolve &PostsResolvers.list_posts/3
+    end
+    field :post, :post do
+      arg :id, :integer
+      resolve &PostsResolvers.get_post/3
     end
   end
 end

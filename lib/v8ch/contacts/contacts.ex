@@ -37,7 +37,7 @@ defmodule V8ch.Contacts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_contact!(id), do: Repo.get!(Contact, id)
+  def get_contact(id), do: Repo.get(Contact, id)
 
   @doc """
   Creates a contact.

@@ -12,6 +12,8 @@
 
 import V8ch.Factories.Factory
 
+insert_list(3, :contact)
+
 insert(:featured_link, %{
   title: "Code Repositories",
   href: "https://github.com/V8CH",

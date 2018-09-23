@@ -19,30 +19,30 @@
 </template>
 
 <script type="text/babel">
-import V8chLogo from '../icons/V8chLogo.vue';
+  import V8chLogo from '../shared/icons/V8chLogo.vue';
 
-export default {
-  components: { V8chLogo },
+  export default {
+    components: { V8chLogo },
 
-  // ----------------------
-  // Data
-  // ----------------------
+    // ----------------------
+    // Data
+    // ----------------------
 
-  data() {
-    return { logoSize: 'small' };
-  },
+    data() {
+      return { logoSize: 'small' };
+    },
 
-  // ----------------------
-  // Lifecycle
-  // ----------------------
+    // ----------------------
+    // Lifecycle
+    // ----------------------
 
-  mounted() {
-    if (window.matchMedia('(min-width: 768px)').matches) {
-      this.logoSize = 'medium';
-    }
-    if (window.matchMedia('(min-width: 992px)').matches) {
-      this.logoSize = 'large';
-    }
-  },
-};
+    mounted() {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        this.logoSize = 'medium';
+      }
+      if (window.matchMedia('(min-width: 992px)').matches) {
+        this.logoSize = 'large';
+      }
+    },
+  };
 </script>
