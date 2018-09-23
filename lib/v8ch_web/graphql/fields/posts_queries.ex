@@ -8,7 +8,7 @@ defmodule V8chWeb.GraphQlFields.PostsQueries do
       resolve &PostsResolvers.list_posts/3
     end
     field :post, :post do
-      arg :id, :string
+      arg :id, :integer
       resolve &PostsResolvers.get_post/3
     end
   end
