@@ -2,6 +2,10 @@ import moment from "moment";
 
 export default {
   props: {
+    deletePost: {
+      required: true,
+      type: Function
+    },
     editPost: {
       required: true,
       type: Function
@@ -17,7 +21,10 @@ export default {
     }
   },
   methods: {
-    onClick() {
+    onDelete() {
+      this.deletePost(this.post.id);
+    },
+    onEdit() {
       this.editPost(this.post.id);
     }
   },
@@ -32,12 +39,17 @@ export default {
           <button
             class="btn btn-link"
             name="edit"
-            onClick={this.onClick}
+            onClick={this.onEdit}
             type="button"
           >
             Edit
           </button>
-          <button class="btn btn-link" type="button">
+          <button
+            class="btn btn-link"
+            name="delete"
+            onClick={this.onDelete}
+            type="button"
+          >
             Delete
           </button>
         </div>

@@ -12,5 +12,29 @@ export default {
         }
       }
     }
+  `,
+  DELETE_POST: gql`
+    mutation deletePost($data: PostDeleteInput!) {
+      deletePost(data: $data) {
+        post {
+          content
+          id
+          insertedAt
+          title
+        }
+      }
+    }
+  `,
+  UPDATE_POST: gql`
+    mutation updatePost($data: PostUpdateInput!) {
+      updatePost(data: $data) {
+        post {
+          content
+          id
+          insertedAt
+          title
+        }
+      }
+    }
   `
 };

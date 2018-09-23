@@ -3,6 +3,7 @@ import PostListItem from "../post/ListItem";
 import ActionButton from "../shared/ActionButton";
 import ContentList from "../shared/ContentList";
 import Topbar from "../shared/Topbar";
+import mutations from "../../graphql/mutations";
 import queries from "../../graphql/queries";
 
 export default {
@@ -14,8 +15,34 @@ export default {
     addPost() {
       this.$router.push("/post/add");
     },
+    deletePost(id) {
+      this.$apollo
+        .mutate({
+          mutation: mutations.DELETE_POST,
+          update: (store, { data }) => {
+            const updatedData = store.readQuery({ query: queries.LIST_POSTS });
+            store.writeQuery({
+              query: queries.LIST_POSTS,
+              data: {
+                ...updatedData,
+                posts: updatedData.posts.filter(
+                  post => post.id !== data.deletePost.post.id
+                )
+              }
+            });
+          },
+          variables: { data: { id: parseInt(id, 10) } }
+        })
+        .then(() => {
+          this.close();
+        })
+        .catch(error => {
+          console.error(
+            `[PostContainer] deletePost() error: ${JSON.stringify(error)}`
+          );
+        });
+    },
     editPost(id) {
-      console.log(`[DashboardContainer] editPost() id: ${JSON.stringify(id)}`);
       this.$router.push(`/post/${id}/edit`);
     }
   },
@@ -41,6 +68,7 @@ export default {
             {this.posts &&
               this.posts.map(post => (
                 <PostListItem
+                  deletePost={id => this.deletePost(id)}
                   editPost={id => this.editPost(id)}
                   key={post.id}
                   post={post}
