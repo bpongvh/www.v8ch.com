@@ -15,6 +15,11 @@ defmodule V8chWeb.GraphQlTypes.Post do
     field :errors, list_of(:input_error)
   end
 
+  @desc "Post input object for delete requests"
+  input_object :post_delete_input do
+    field :id, non_null(:integer)
+  end
+
   @desc "Post input object for create requests"
   input_object :post_create_input do
     field :content, non_null(:string)
