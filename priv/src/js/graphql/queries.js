@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export default {
   GET_POST: gql`
-    query Post($data: String) {
+    query Post($data: Int!) {
       post(id: $data) {
         content
         id
