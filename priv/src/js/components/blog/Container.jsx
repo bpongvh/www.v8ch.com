@@ -47,7 +47,10 @@ export default {
                   </div>
                   <h2>{post.title}</h2>
                 </header>
-                <section class="post-content" v-html="post.content.html" />
+                <section
+                  class="post-content"
+                  domPropsInnerHTML={post.content.html}
+                />
               </article>
             ))}
         </main>
