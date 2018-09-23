@@ -11,6 +11,7 @@ export default {
   },
   data() {
     return {
+      id: null,
       isTouched: false,
       properties: {
         content: {
@@ -38,6 +39,13 @@ export default {
       );
     }
   },
+  watch: {
+    initialValues(next, prev) {
+      if (next !== prev) {
+        this.id = next.id ? next.id : null;
+      }
+    }
+  },
   methods: {
     handleChange(valueObject) {
       if (!this.isTouched) {
@@ -50,7 +58,9 @@ export default {
     },
     handleSubmit(event) {
       event.preventDefault();
-      const formData = formDataPropertiesTransformer(this.properties);
+      const formData = this.id
+        ? formDataPropertiesTransformer(this.properties, this.id)
+        : formDataPropertiesTransformer(this.properties);
       this.save(formData);
     }
   },

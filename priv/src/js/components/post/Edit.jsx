@@ -1,6 +1,6 @@
 import Topbar from "../shared/Topbar";
 import PostForm from "./Form";
-// import mutations from "../../graphql/mutations";
+import mutations from "../../graphql/mutations";
 import queries from "../../graphql/queries";
 import postResponseTransformer from "../../transformers/response-data/post";
 
@@ -13,7 +13,7 @@ export default {
       },
       variables() {
         return {
-          data: this.$route.params.id
+          data: parseInt(this.$route.params.id, 10)
         };
       }
     }
@@ -30,22 +30,25 @@ export default {
       this.$router.push("/dashboard");
     },
     save(formData) {
-      // this.$apollo
-      //   .mutate({
-      //     mutation: mutations.CREATE_POST,
-      //     update: (store, { data }) => {
-      //       const updatedData = store.readQuery({ query: queries.LIST_POSTS });
-      //       updatedData.posts.push(data.createPost.post);
-      //       store.writeQuery({ query: queries.LIST_POSTS, data: updatedData });
-      //     },
-      //     variables: { data: formData }
-      //   })
-      //   .then(() => {
-      //     this.close();
-      //   })
-      //   .catch(error => {
-      //     console.error(`[PostAdd] save() error: ${JSON.stringify(error)}`);
-      //   });
+      this.$apollo
+        .mutate({
+          mutation: mutations.UPDATE_POST,
+          update: (store, { data }) => {
+            const updatedData = store.readQuery({ query: queries.LIST_POSTS });
+            const index = updatedData.posts.findIndex(
+              post => post.id === data.updatePost.post.id
+            );
+            updatedData[index] = data.updatePost.post;
+            store.writeQuery({ query: queries.LIST_POSTS, data: updatedData });
+          },
+          variables: { data: formData }
+        })
+        .then(() => {
+          this.close();
+        })
+        .catch(error => {
+          console.error(`[PostEdit] save() error: ${JSON.stringify(error)}`);
+        });
     }
   },
   render() {
