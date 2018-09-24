@@ -25,7 +25,7 @@ new Vue({
   apolloProvider,
   router,
   render: h => {
-    const adminPaths = ["/dashboard", "/post/add"];
+    const adminPaths = ["/dashboard/", "/post/add"];
     if (adminPaths.includes(window.location.pathname)) {
       return h(Admin);
     }
