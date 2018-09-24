@@ -22,7 +22,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({ mode: "history", routes });
 
 new Vue({
-  provide: apolloProvider.provide(),
+  apolloProvider,
   router,
   render: h => {
     const adminPaths = ["/dashboard", "/post/add"];
