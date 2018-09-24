@@ -24,7 +24,7 @@ defmodule V8chWeb.AuthenticationController do
       external:
         "#{@hosted_ui_url}/login?response_type=code&client_id=#{@app_client_id}&redirect_uri=#{
           @callback_url
-        }/"
+        }"
     )
   end
 
