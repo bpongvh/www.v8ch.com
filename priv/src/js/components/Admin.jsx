@@ -41,7 +41,7 @@ export default {
           toggleOffcanvas={() => this.toggleOffcanvas()}
           isOffcanvasShowing={this.isOffcanvasShowing}
         />
-        <router-view v-if="isAuthenticated" />
+        {this.isAuthenticated && <router-view />}
       </div>
     );
   }
