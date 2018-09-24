@@ -59,7 +59,7 @@ export default {
           <h2>Edit Post</h2>
         </header>
         <main class="container">
-          <PostForm initialValues={this.post} save={this.save} />
+          {this.post && <PostForm initialValues={this.post} save={this.save} />}
         </main>
       </div>
     );

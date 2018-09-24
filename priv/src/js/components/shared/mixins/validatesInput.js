@@ -16,7 +16,7 @@ const validatesInputMixin = {
     return {
       isBlurred: false,
       isPreviewing: false,
-      isValid: !this.required,
+      isValid: !this.required || !!this.initialValue,
       wasValid: false
     };
   },

@@ -42,7 +42,7 @@ const errorLink = onError(
 const httpLink = createHttpLink({ uri: process.env.GRAPHQL_HOST_URI });
 
 const apolloClient = new ApolloClient({
-  link: ApolloLink.from([authLink, errorLink, httpLink]),
+  link: ApolloLink.from([errorLink, authLink, httpLink]),
   cache: new InMemoryCache(),
   connectToDevTools: process.env.NODE_ENV !== "production"
 });
