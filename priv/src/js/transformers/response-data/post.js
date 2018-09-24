@@ -9,7 +9,7 @@ export default function(postResponseJson) {
       html: DOMPurify.sanitize(html),
       markdown: postResponseJson.content
     },
-    published: moment().format("ll"),
+    published: moment(postResponseJson.insertedAt).format("ll"),
     id: postResponseJson.id,
     title: postResponseJson.title
   };
