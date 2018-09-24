@@ -21,7 +21,7 @@ class AwsCognitoAuthenticationService {
     params.append("grant_type", "authorization_code");
     params.append(
       "redirect_uri",
-      window.location.origin + window.location.pathname
+      window.location.origin + window.location.pathname + "/"
     );
     return fetch(this.url, {
       body: params,
