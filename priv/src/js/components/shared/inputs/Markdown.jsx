@@ -9,13 +9,6 @@ export default {
   data() {
     return { htmlOutput: "" };
   },
-  watch: {
-    initialValue(next, prev) {
-      if (next !== prev) {
-        this.updateHtmlOutput();
-      }
-    }
-  },
   mounted() {
     this.htmlOutput = converter.makeHtml(this.initialValue);
   },
