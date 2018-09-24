@@ -11,20 +11,29 @@ export default {
   },
   data() {
     return {
-      id: null,
+      id:
+        this.initialValues && this.initialValues.id
+          ? this.initialValues.id
+          : null,
       isTouched: false,
       properties: {
         content: {
-          isValid: false,
+          isValid: !!(this.initialValues && this.initialValues.content),
           name: "content",
           validationFn: markdownValidationFn("Content", true),
-          value: ""
+          value:
+            this.initialValues && this.initialValues.content
+              ? this.initialValues.content.markdown
+              : ""
         },
         title: {
-          isValid: false,
+          isValid: !!(this.initialValues && this.initialValues.title),
           name: "title",
           validationFn: textValidationFn("Title", true),
-          value: ""
+          value:
+            this.initialValues && this.initialValues.title
+              ? this.initialValues.title
+              : ""
         }
       }
     };
