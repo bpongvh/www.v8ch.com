@@ -48,6 +48,11 @@ article {
   & h3 {
     font-size: 1.5em;
     padding: 1em 0.5em 0.5em;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 2.25em;
+      padding: 1em 2.66666667em 0.66666667em;
+    }
   }
 
   li {
@@ -55,6 +60,10 @@ article {
 
     &:not(:last-of-type) {
       padding: 0 0 1em;
+
+      @include media-breakpoint-up(xl) {
+        padding: 0 0 0.8em;
+      }
     }
   }
 
@@ -84,5 +93,18 @@ article {
 
   ul {
     padding: 0 2em;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.25em;
+      padding: 0 6em;
+    }
+  }
+}
+
+.post-content__image {
+  margin: 2em 0 2em;
+
+  @include media-breakpoint-up(xl) {
+    margin: 4em 0 4em;
   }
 }
