@@ -9,7 +9,6 @@ import store from "../store/index";
 
 const authLink = setContext((_request, prevContext) => {
   return {
-    ...prevContext,
     headers: addAuthorizationHeader(prevContext.headers)
   };
 });
@@ -22,7 +21,6 @@ const errorLink = onError(
             store.dispatch("session/refreshTokens").then(() => {
               const prevContext = operation.getContext();
               operation.setContext({
-                ...prevContext,
                 headers: addAuthorizationHeader(prevContext.headers)
               });
               return forward(operation);

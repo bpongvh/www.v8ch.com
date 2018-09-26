@@ -117,7 +117,9 @@ defmodule V8ch.ContentTypes do
 
   """
   def list_posts do
-    Repo.all(Post)
+    query = Post
+    |> order_by(desc: :inserted_at)
+    Repo.all(query)
   end
 
   @doc """

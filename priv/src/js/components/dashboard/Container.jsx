@@ -33,12 +33,11 @@ export default {
           },
           variables: { data: { id: parseInt(id, 10) } }
         })
-        .then(() => {
-          this.close();
-        })
         .catch(error => {
           console.error(
-            `[PostContainer] deletePost() error: ${JSON.stringify(error)}`
+            `[PostContainer] deletePost() error.message: ${JSON.stringify(
+              error.message
+            )}`
           );
         });
     },
