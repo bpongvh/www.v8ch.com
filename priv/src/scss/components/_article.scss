@@ -36,14 +36,27 @@ article {
     padding: 1em;
 
     @include media-breakpoint-up(xl) {
-        font-size: 1em;
-        padding: 1.5em;
+      font-size: 1em;
+      padding: 1.5em;
     }
   }
 }
 
 .post-content {
   padding: 0 0 2em;
+
+  & h3 {
+    font-size: 1.5em;
+    padding: 1em 0.5em 0.5em;
+  }
+
+  li {
+    line-height: 1.25em;
+
+    &:not(:last-of-type) {
+      padding: 0 0 1em;
+    }
+  }
 
   & p {
     line-height: 1.25;
@@ -67,5 +80,9 @@ article {
     @include media-breakpoint-up(xl) {
       padding: 2em 6em;
     }
+  }
+
+  ul {
+    padding: 0 2em;
   }
 }
